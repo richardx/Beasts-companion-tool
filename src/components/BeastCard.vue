@@ -9,10 +9,11 @@
       <!-- CR Badge -->
       <div class="cr-badge" :class="getCRClass(beast.cr)">CR {{ beast.cr }}</div>
 
-      <!-- top‑thumbnail kun synlig når kortet er foldet ind -->
+      <!-- thumbnail kun synlig når kortet er collapsed -->
       <img
         v-if="!expanded"
         class="token-thumb"
+        :class="{ 'compact-thumb': compactMode && !expanded }"
         :src="currentSrc"
         :alt="beast.name"
         @error.stop="onImgError"
@@ -165,7 +166,36 @@
             </div>
             <div v-if="sensesText">
               <dt>Senses</dt>
-              <dd>{{ sensesText }}</dd>
+              <dd class="senses-list">
+                <span v-for="(value, sense) in beast.senses" :key="sense" class="sense-item">
+                  <template v-if="sense === 'passivePerception'">
+                    Passive
+                    <a
+                      :href="getSkillLink('perception')"
+                      target="_blank"
+                      class="skill-link"
+                      title="View Perception rules"
+                    >
+                      Perception
+                    </a>
+                    {{ value }}
+                  </template>
+                  <template v-else>
+                    <a
+                      v-if="getSenseLink(sense)"
+                      :href="getSenseLink(sense)"
+                      target="_blank"
+                      class="sense-link"
+                      :title="`View ${cap(sense)} rules`"
+                    >
+                      {{ cap(sense) }}
+                    </a>
+                    <span v-else>{{ cap(sense) }}</span>
+                    {{ value }}
+                  </template>
+                  <span v-if="!isLastItem(sense, beast.senses)">; </span>
+                </span>
+              </dd>
             </div>
             <div>
               <dt>CR</dt>
@@ -179,7 +209,16 @@
                   :key="condition"
                   class="condition-tag"
                 >
-                  {{ condition }}
+                  <a
+                    v-if="getConditionLink(condition)"
+                    :href="getConditionLink(condition)"
+                    target="_blank"
+                    class="condition-link"
+                    :title="`View ${condition} condition`"
+                  >
+                    {{ condition }}
+                  </a>
+                  <span v-else>{{ condition }}</span>
                 </span>
               </dd>
             </div>
@@ -194,7 +233,7 @@
           </dl>
         </section>
 
-        <!-- thumbnail vist kun i udvidet visning -->
+        <!-- thumbnail i detail view - vises når expanded -->
         <img
           class="token-thumb detail-thumb"
           :src="currentSrc"
@@ -224,7 +263,22 @@
         </table>
       </section>
 
-      <p v-if="skillsText" class="skills"><strong>Skills</strong> {{ skillsText }}</p>
+      <p v-if="skillsText" class="skills">
+        <strong>Skills</strong>
+        <span v-for="(value, skill) in beast.skills" :key="skill" class="skill-item">
+          <a
+            v-if="getSkillLink(skill)"
+            :href="getSkillLink(skill)"
+            target="_blank"
+            class="skill-link"
+            :title="`View ${cap(skill)} rules`"
+          >
+            {{ cap(skill) }} +{{ value }}
+          </a>
+          <span v-else>{{ cap(skill) }} +{{ value }}</span>
+          <span v-if="!isLastItem(skill, beast.skills)">, </span>
+        </span>
+      </p>
 
       <h3 v-if="beast.traits?.length" class="section-title">Traits</h3>
       <section v-if="beast.traits?.length" class="traits">
@@ -265,18 +319,46 @@
 </template>
 
 <script setup>
-import { computed, nextTick, ref, watch } from 'vue'
+import { getConditionLink, getSenseLink, getSkillLink } from '@/utils/dndLinks'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useActiveBeasts } from '../stores/activeBeasts'
 
 const props = defineProps({
   beast: { type: Object, required: true },
   lockExpanded: { type: Boolean, default: false },
+  forceExpanded: { type: Boolean, default: false },
+  compactMode: { type: Boolean, default: false },
 })
 
 // ── EXPANSION STATE ───────────────────────────────────────────
 const activeStore = useActiveBeasts()
 const isActive = computed(() => activeStore.contains(props.beast.name))
-const expanded = ref(props.lockExpanded)
+const expanded = ref(props.lockExpanded || props.forceExpanded)
+
+// Watch for forceExpanded changes
+watch(
+  () => props.forceExpanded,
+  (newVal) => {
+    if (!props.lockExpanded) {
+      expanded.value = newVal
+    }
+  },
+)
+
+// Listen for toggle-all-beasts event
+const handleToggleAll = (event) => {
+  if (!props.lockExpanded) {
+    expanded.value = event.detail.expanded
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('toggle-all-beasts', handleToggleAll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('toggle-all-beasts', handleToggleAll)
+})
 
 watch(isActive, (val) => {
   if (props.lockExpanded && val) {
@@ -385,6 +467,12 @@ const formatSpellcasting = (text) => {
   }
 
   return formatted
+}
+
+// Helper to check if item is last in object
+const isLastItem = (key, obj) => {
+  const keys = Object.keys(obj)
+  return keys[keys.length - 1] === key
 }
 
 // ref for auto-scroll
@@ -673,6 +761,36 @@ const cardRef = ref(null)
   gap: 0.25rem;
 }
 
+/********** LINK STYLES **********/
+.skill-link,
+.sense-link,
+.condition-link,
+.damage-type-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted #dc2626;
+  transition: all 0.2s;
+}
+
+.skill-link:hover,
+.sense-link:hover,
+.condition-link:hover,
+.damage-type-link:hover {
+  color: #dc2626;
+  border-bottom-style: solid;
+}
+
+.skill-item,
+.sense-item {
+  white-space: nowrap;
+}
+
+.senses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 .condition-tag {
   padding: 0.125rem 0.375rem;
   background: #dc26261a;
@@ -680,6 +798,10 @@ const cardRef = ref(null)
   border-radius: 0.25rem;
   font-size: 0.75rem;
   color: #ef4444;
+}
+
+.condition-tag a {
+  color: inherit;
 }
 
 /********** ABILITY TABLE **********/
@@ -804,5 +926,11 @@ const cardRef = ref(null)
     width: 1rem;
     height: 1rem;
   }
+}
+
+/********** COMPACT MODE **********/
+.compact-thumb {
+  width: 48px !important;
+  height: 48px !important;
 }
 </style>

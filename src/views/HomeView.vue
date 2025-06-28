@@ -12,7 +12,56 @@ const active = useActiveBeasts()
 const filters = useFilters()
 
 /* ---------- view options ---------- */
-const sortBy = ref('name') // 'name' | 'cr' | 'type'
+const sortBy = ref('name') // udvidet med flere muligheder
+const sortDirection = ref('asc') // 'asc' | 'desc'
+const viewMode = ref('grid') // 'grid' | 'compact'
+const showAllExpanded = ref(false) // til expand/collapse all
+
+/* ---------- helper function til at parse CR til numerisk værdi ---------- */
+const parseCR = (cr) => {
+  if (!cr) return 0
+  if (cr === '1/8') return 0.125
+  if (cr === '1/4') return 0.25
+  if (cr === '1/2') return 0.5
+  return parseFloat(cr) || 0
+}
+
+/* ---------- helper function til at få max speed ---------- */
+const getMaxSpeed = (beast) => {
+  let maxSpeed = 0
+  if (beast.speed) {
+    // Parse forskellige speed typer (walk, fly, swim, climb, burrow)
+    const speedMatch = beast.speed.match(/(\d+)\s*ft/g)
+    if (speedMatch) {
+      speedMatch.forEach((match) => {
+        const speed = parseInt(match)
+        if (speed > maxSpeed) maxSpeed = speed
+      })
+    }
+  }
+  return maxSpeed
+}
+
+/* ---------- helper function til at få primary movement type ---------- */
+const getPrimaryMovementType = (beast) => {
+  if (!beast.speed) return 'walk'
+  const speed = beast.speed.toLowerCase()
+  if (speed.includes('fly')) return 'fly'
+  if (speed.includes('swim')) return 'swim'
+  if (speed.includes('burrow')) return 'burrow'
+  if (speed.includes('climb')) return 'climb'
+  return 'walk'
+}
+
+/* ---------- helper function til size order ---------- */
+const sizeOrder = {
+  Tiny: 1,
+  Small: 2,
+  Medium: 3,
+  Large: 4,
+  Huge: 5,
+  Gargantuan: 6,
+}
 
 /* ---------- filtreret og sorteret liste ---------- */
 const beasts = computed(() => {
@@ -20,14 +69,42 @@ const beasts = computed(() => {
 
   // Sortering
   filtered.sort((a, b) => {
+    let compareValue = 0
+
     switch (sortBy.value) {
       case 'cr':
-        return (a.crNumeric || 0) - (b.crNumeric || 0)
+        compareValue = (parseCR(a.cr) || 0) - (parseCR(b.cr) || 0)
+        break
       case 'type':
-        return (a.type || '').localeCompare(b.type || '')
-      default:
-        return a.name.localeCompare(b.name)
+        compareValue = (a.type || '').localeCompare(b.type || '')
+        break
+      case 'hp':
+        compareValue = (a.hp || 0) - (b.hp || 0)
+        break
+      case 'ac':
+        compareValue = (a.ac || 0) - (b.ac || 0)
+        break
+      case 'speed':
+        compareValue = getMaxSpeed(a) - getMaxSpeed(b)
+        break
+      case 'size':
+        compareValue = (sizeOrder[a.size] || 3) - (sizeOrder[b.size] || 3)
+        break
+      case 'movement':
+        compareValue = getPrimaryMovementType(a).localeCompare(getPrimaryMovementType(b))
+        break
+      case 'str':
+        compareValue = (a.str || 0) - (b.str || 0)
+        break
+      case 'con':
+        compareValue = (a.con || 0) - (b.con || 0)
+        break
+      default: // 'name'
+        compareValue = a.name.localeCompare(b.name)
     }
+
+    // Anvend sorterings retning
+    return sortDirection.value === 'desc' ? -compareValue : compareValue
   })
 
   return filtered
@@ -42,6 +119,24 @@ const hasFilters = computed(() => {
 const clearAllFilters = () => {
   filters.reset()
   filters.q = ''
+}
+
+const toggleSortDirection = () => {
+  sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+}
+
+const toggleAllExpanded = () => {
+  showAllExpanded.value = !showAllExpanded.value
+  // Dette vil sende et event til alle BeastCard komponenter
+  window.dispatchEvent(
+    new CustomEvent('toggle-all-beasts', {
+      detail: { expanded: showAllExpanded.value },
+    }),
+  )
+}
+
+const toggleViewMode = () => {
+  viewMode.value = viewMode.value === 'grid' ? 'compact' : 'grid'
 }
 </script>
 
@@ -89,20 +184,137 @@ const clearAllFilters = () => {
           </div>
 
           <div class="view-controls">
-            <!-- Sort dropdown -->
-            <select v-model="sortBy" class="sort-select">
-              <option value="name">Sort by Name</option>
-              <option value="cr">Sort by CR</option>
-              <option value="type">Sort by Type</option>
-            </select>
+            <!-- Quick actions -->
+            <div class="quick-actions">
+              <button
+                @click="toggleAllExpanded"
+                class="action-btn"
+                :title="showAllExpanded ? 'Collapse all' : 'Expand all'"
+              >
+                <svg
+                  v-if="!showAllExpanded"
+                  class="action-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                  <path d="M15 18l6-6-6-6" />
+                </svg>
+                <svg
+                  v-else
+                  class="action-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                  <path d="M9 18l-6-6 6-6" />
+                </svg>
+                <span class="action-label">{{
+                  showAllExpanded ? 'Collapse All' : 'Expand All'
+                }}</span>
+              </button>
+
+              <button
+                @click="toggleViewMode"
+                class="action-btn"
+                :title="`Switch to ${viewMode === 'grid' ? 'compact' : 'grid'} view`"
+              >
+                <svg
+                  v-if="viewMode === 'grid'"
+                  class="action-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="7" height="7" />
+                  <rect x="14" y="3" width="7" height="7" />
+                  <rect x="3" y="14" width="7" height="7" />
+                  <rect x="14" y="14" width="7" height="7" />
+                </svg>
+                <svg
+                  v-else
+                  class="action-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="8" y1="6" x2="21" y2="6" />
+                  <line x1="8" y1="12" x2="21" y2="12" />
+                  <line x1="8" y1="18" x2="21" y2="18" />
+                  <line x1="3" y1="6" x2="3" y2="6.01" />
+                  <line x1="3" y1="12" x2="3" y2="12.01" />
+                  <line x1="3" y1="18" x2="3" y2="18.01" />
+                </svg>
+                <span class="action-label"
+                  >{{ viewMode === 'grid' ? 'Compact' : 'Grid' }} View</span
+                >
+              </button>
+            </div>
+
+            <!-- Sort dropdown with direction -->
+            <div class="sort-container">
+              <select v-model="sortBy" class="sort-select">
+                <option value="name">Sort by Name</option>
+                <option value="cr">Sort by CR</option>
+                <option value="type">Sort by Type</option>
+                <option value="hp">Sort by Hit Points</option>
+                <option value="ac">Sort by Armor Class</option>
+                <option value="speed">Sort by Speed</option>
+                <option value="size">Sort by Size</option>
+                <option value="movement">Sort by Movement Type</option>
+                <option value="str">Sort by Strength</option>
+                <option value="con">Sort by Constitution</option>
+              </select>
+              <button
+                @click="toggleSortDirection"
+                class="sort-direction-btn"
+                :title="`Sort ${sortDirection === 'asc' ? 'ascending' : 'descending'}`"
+              >
+                <svg
+                  v-if="sortDirection === 'asc'"
+                  class="sort-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+                <svg
+                  v-else
+                  class="sort-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- ░░░ BEASTS GRID ░░░ -->
         <transition name="fade" mode="out-in">
-          <div v-if="beasts.length > 0" class="beast-grid">
+          <div
+            v-if="beasts.length > 0"
+            :class="viewMode === 'compact' ? 'beast-list' : 'beast-grid'"
+          >
             <transition-group name="beast-fade">
-              <BeastCard v-for="b in beasts" :key="b.name" :beast="b" />
+              <BeastCard
+                v-for="b in beasts"
+                :key="b.name"
+                :beast="b"
+                :force-expanded="showAllExpanded"
+                :compact-mode="viewMode === 'compact'"
+              />
             </transition-group>
           </div>
 
@@ -224,6 +436,54 @@ const clearAllFilters = () => {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.action-btn:hover {
+  border-color: #dc2626;
+  background: #262626;
+}
+
+.action-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.action-label {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .action-label {
+    display: inline;
+  }
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .sort-select {
@@ -244,6 +504,29 @@ const clearAllFilters = () => {
 .sort-select:focus {
   outline: none;
   border-color: #dc2626;
+}
+
+.sort-direction-btn {
+  padding: 0.5rem;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-direction-btn:hover {
+  border-color: #404040;
+  background: #262626;
+}
+
+.sort-icon {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .view-toggle {

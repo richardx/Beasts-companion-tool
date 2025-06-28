@@ -137,7 +137,7 @@
       </div>
 
       <!-- ╭─ Movement chips ──────────────╮ -->
-      <fieldset class="sb-group">
+      <div class="sb-group">
         <div class="sb-label">
           <Navigation class="label-icon" />
           Movement Types
@@ -155,7 +155,7 @@
             <span>{{ m.label }}</span>
           </button>
         </div>
-      </fieldset>
+      </div>
 
       <!-- ╭─ Senses (fold/udfold) ────────╮ -->
       <details class="sb-group sense-group" :open="sensesOpen">
