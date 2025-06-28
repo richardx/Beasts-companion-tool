@@ -1,0 +1,3610 @@
+[
+  {
+    "name": "Allosaurus",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "51 (6d10 + 18)",
+    "speed": {
+      "walkSpeed": "60 ft."
+    },
+    "stats": {
+      "str": 19,
+      "dex": 13,
+      "con": 17,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 5
+    },
+    "senses": {
+      "passivePerception": 15
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 6, Reach 5 ft., Damage 2d10+4, Type piercing"
+      },
+      {
+        "name": "Claws",
+        "description": "If target is Large or smaller and the allosaurus moved 30+ ft straight before the hit, target is Prone and allosaurus can make one Bite attack against it."
+      }
+    ]
+  },
+  {
+    "name": "Ankylosaurus",
+    "cr": "3",
+    "crNumeric": 3.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 15,
+    "hp": "68 (8d12 + 16)",
+    "speed": {
+      "walkSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 19,
+      "dex": 11,
+      "con": 15,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 11
+    },
+    "actions": [
+      {
+        "name": "Tail",
+        "description": "If target is Huge or smaller, it has the Prone condition."
+      },
+      {
+        "name": "Action",
+        "description": "The ankylosaurus makes two Tail attacks."
+      }
+    ]
+  },
+  {
+    "name": "Ape",
+    "cr": "0.5",
+    "crNumeric": 0.5,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "19 (3d8 + 6)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 16,
+      "dex": 14,
+      "con": 14,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "athletics": 5,
+      "perception": 3
+    },
+    "senses": {
+      "passivePerception": 13
+    },
+    "actions": [
+      {
+        "name": "Fist",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d4+3, Type bludgeoning"
+      },
+      {
+        "name": "Rock (Recharge 6)",
+        "description": "Attack bonus 5, Reach 25/50 ft., Damage 2d6+3, Type bludgeoning"
+      },
+      {
+        "name": "Action",
+        "description": "The ape makes two Fist attacks."
+      }
+    ]
+  },
+  {
+    "name": "Archelon",
+    "cr": "4",
+    "crNumeric": 4.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 17,
+    "hp": "90 (12d12 + 12)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "swimSpeed": "80 ft."
+    },
+    "stats": {
+      "str": 18,
+      "dex": 16,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "stealth": 5
+    },
+    "senses": {
+      "passivePerception": 12
+    },
+    "traits": [
+      {
+        "name": "",
+        "description": "Amphibious (can breathe air and water)"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 6, Reach 5 ft., Damage 3d6+4, Type piercing"
+      },
+      {
+        "name": "Action",
+        "description": "The archelon makes two Bite attacks."
+      }
+    ]
+  },
+  {
+    "name": "Baboon",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "3 (1d6)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 8,
+      "dex": 14,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 11
+    },
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "Advantage on attack roll if ally is within 5 ft and not incapacitated"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 1, Reach 5 ft., Damage 1d4-1, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Badger",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "5 (1d4+3)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "burrowSpeed": "5 ft."
+    },
+    "stats": {
+      "str": 10,
+      "dex": 11,
+      "con": 16,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "darkvision": "30 ft.",
+      "passivePerception": 13
+    },
+    "traits": [
+      {
+        "name": "",
+        "description": "Poison Resistance"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 2, Reach 5 ft., Damage 1, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Bat",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "flySpeed": "30 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 15,
+      "con": 8,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "blindsight": "60 ft.",
+      "passivePerception": 11
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Black Bear",
+    "cr": "0.5",
+    "crNumeric": 0.5,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "19 (3d8+6)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 12,
+      "con": 14,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 5
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 15
+    },
+    "actions": [
+      {
+        "name": "Rend",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1d6+2, Type slashing"
+      },
+      {
+        "name": "Action",
+        "description": "The bear makes two Rend attacks."
+      }
+    ]
+  },
+  {
+    "name": "Blood Hawk",
+    "cr": "0.125",
+    "crNumeric": 0.125,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "7 (2d6)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 6,
+      "dex": 14,
+      "con": 10,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 6
+    },
+    "senses": {
+      "passivePerception": 16
+    },
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "Advantage on attack roll if ally is within 5 ft and not incapacitated"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Beak",
+        "description": "If target is Bloodied, deal 1d8+2 instead of 1d4+2"
+      }
+    ]
+  },
+  {
+    "name": "Boar",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "13 (2d8+4)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 13,
+      "dex": 11,
+      "con": 14,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 9
+    },
+    "traits": [
+      {
+        "name": "Bloodied Fury",
+        "description": "While bloodied, has advantage on attack rolls"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Gore",
+        "description": "If Medium/smaller and boar moved 20+ ft, target Prone and takes extra 1d6 piercing"
+      }
+    ]
+  },
+  {
+    "name": "Brown Bear",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "22 (3d10 + 6)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 17,
+      "dex": 12,
+      "con": 15,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d8+3, Type piercing"
+      },
+      {
+        "name": "Claw",
+        "description": "If target is Large or smaller, it has the Prone condition."
+      },
+      {
+        "name": "Action",
+        "description": "The bear makes one Bite attack and one Claw attack."
+      }
+    ]
+  },
+  {
+    "name": "Camel",
+    "cr": "0.125",
+    "crNumeric": 0.125,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 10,
+    "hp": "17 (2d10 + 6)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 8,
+      "con": 17,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 10
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1d4+2, Type bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Cat",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "2 (1d4)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 3,
+      "dex": 15,
+      "con": 10,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "traits": [
+      {
+        "name": "Jumper",
+        "description": "Cat's jump distance is determined using Dexterity instead of Strength."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Scratch",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1, Type slashing"
+      }
+    ]
+  },
+  {
+    "name": "Constrictor Snake",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "13 (2d10 + 2)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 14,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
+    "senses": {
+      "blindsight": "10 ft.",
+      "passivePerception": 12
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1d8+2, Type piercing"
+      },
+      {
+        "name": "Constrict",
+        "description": "DC 12 Strength save or Medium/smaller creature is Grappled (escape DC 12); failure: takes 3d4 bludgeoning damage and Grappled."
+      }
+    ]
+  },
+  {
+    "name": "Crab",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "3 (1d4 + 1)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "swimSpeed": "20 ft."
+    },
+    "stats": {
+      "str": 6,
+      "dex": 11,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "stealth": 2
+    },
+    "senses": {
+      "blindsight": "30 ft.",
+      "passivePerception": 9
+    },
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The crab can breathe air and water."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Claw",
+        "description": "Attack bonus 2, Reach 5 ft., Damage 1, Type bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Crocodile",
+    "cr": "0.5",
+    "crNumeric": 0.5,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "13 (2d10+2)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 10,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "stealth": 2
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "Can hold breath for 1 hour."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "If target is Medium/smaller, Grappled (escape DC 12); while Grappled, target is Restrained."
+      }
+    ]
+  },
+  {
+    "name": "Deer",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "4 (1d8)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 11,
+      "dex": 16,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 4
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 14
+    },
+    "traits": [
+      {
+        "name": "Agile",
+        "description": "The deer doesn't provoke Opportunity Attacks when it moves out of an enemy's reach."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Ram",
+        "description": "Attack bonus 2, Reach 5 ft., Damage 1d4, Type bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Dire Wolf",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "22 (3d10 + 6)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 17,
+      "dex": 15,
+      "con": 15,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 15
+    },
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "Advantage on attack roll if ally is within 5 ft and not incapacitated"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "If target is Large or smaller, it has the Prone condition."
+      }
+    ]
+  },
+  {
+    "name": "Draft Horse",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 10,
+    "hp": "15 (2d10+4)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 18,
+      "dex": 10,
+      "con": 15,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "actions": [
+      {
+        "name": "Hooves",
+        "description": "Attack bonus 6, Reach 5 ft., Damage 1d4+4, Type bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Elephant",
+    "cr": "4",
+    "crNumeric": 4.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "76 (8d12+24)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 22,
+      "dex": 9,
+      "con": 17,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "actions": [
+      {
+        "name": "Gore",
+        "description": "If the target is Huge or smaller and the elephant moved 20+ ft straight toward it before the hit, the target has the Prone condition."
+      },
+      {
+        "name": "Action",
+        "description": "The elephant makes two Gore attacks."
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Trample",
+        "description": "DC 16 Dexterity Saving Throw; one creature within 5 ft that has the Prone condition. Failure: 17 (2d10+6) bludgeoning damage. Success: Half damage."
+      }
+    ]
+  },
+  {
+    "name": "Eagle",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "4 (1d6+1)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 6,
+      "dex": 15,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 6
+    },
+    "senses": {
+      "passivePerception": 16
+    },
+    "actions": [
+      {
+        "name": "Talons",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1d4+2, Type slashing"
+      }
+    ]
+  },
+  {
+    "name": "Elk",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 10,
+    "hp": "11 (2d10)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 16,
+      "dex": 10,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 12
+    },
+    "actions": [
+      {
+        "name": "Ram",
+        "description": "If target is Large or smaller and elk moved 20+ ft straight before the hit, takes extra 2d6 bludgeoning and has Prone condition."
+      }
+    ]
+  },
+  {
+    "name": "Flying Snake",
+    "cr": "0.125",
+    "crNumeric": 0.125,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "5 (2d4)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "flySpeed": "60 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 4,
+      "dex": 15,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "blindsight": "10 ft.",
+      "passivePerception": 11
+    },
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "Doesn't provoke Opportunity Attacks when flying out of enemy's reach."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1 piercing + 5 (2d4) poison, Type piercing & poison"
+      }
+    ]
+  },
+  {
+    "name": "Frog",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "swimSpeed": "20 ft."
+    },
+    "stats": {
+      "str": 1,
+      "dex": 13,
+      "con": 8,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 1,
+      "stealth": 3
+    },
+    "senses": {
+      "darkvision": "30 ft.",
+      "passivePerception": 11
+    },
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "Can breathe air and water."
+      },
+      {
+        "name": "Standing Leap",
+        "description": "Long jump up to 10 ft, high jump up to 5 ft with or without running start."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 3, Reach 5 ft., Damage 1, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Ape",
+    "cr": "7",
+    "crNumeric": 7.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "168 (16d12+64)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 23,
+      "dex": 14,
+      "con": 18,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "athletics": 9,
+      "perception": 4,
+      "survival": 4
+    },
+    "senses": {
+      "passivePerception": 14
+    },
+    "actions": [
+      {
+        "name": "Fist",
+        "description": "Attack bonus 9, Reach 10 ft., Damage 3d10+6, Type bludgeoning"
+      },
+      {
+        "name": "Boulder Toss (Recharge 6)",
+        "description": "DC 17 Dexterity Saving Throw; each creature in 5-ft-radius sphere; Failure: 24 (7d6) bludgeoning and if Large or smaller, Prone; Success: half damage"
+      },
+      {
+        "name": "Action",
+        "description": "The ape makes two Fist attacks."
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Leap",
+        "description": "The ape jumps up to 30 feet by spending 10 ft of movement."
+      }
+    ]
+  },
+  {
+    "name": "Giant Badger",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "15 (2d8+6)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "burrowSpeed": "10 ft."
+    },
+    "stats": {
+      "str": 13,
+      "dex": 10,
+      "con": 17,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "traits": [
+      {
+        "name": "",
+        "description": "Poison Resistance"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 3, Reach 5 ft., Damage 2d4+1, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Bat",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "22 (4d10)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 16,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "blindsight": "120 ft.",
+      "passivePerception": 11
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d6+3, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Boar",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "42 (5d10+15)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 17,
+      "dex": 10,
+      "con": 16,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 8
+    },
+    "traits": [
+      {
+        "name": "Bloodied Fury",
+        "description": "Has advantage on melee attacks while bloodied."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Gore",
+        "description": "If target is Large or smaller and boar moved 20+ ft straight before the hit, extra 2d6 and Prone."
+      }
+    ]
+  },
+  {
+    "name": "Giant Centipede",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "9 (2d6+2)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 5,
+      "dex": 14,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "blindsight": "30 ft.",
+      "passivePerception": 8
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Target has the Poisoned condition until the start of centipede's next turn."
+      }
+    ]
+  },
+  {
+    "name": "Giant Constrictor Snake",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "60 (8d12+8)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 19,
+      "dex": 14,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "blindsight": "10 ft.",
+      "passivePerception": 12
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 6, Reach 10 ft., Damage 2d6+4, Type piercing"
+      },
+      {
+        "name": "Constrict",
+        "description": "DC 14 Strength save or Large/smaller creature Grappled (escape DC 14). Failure: 2d8+4 bludgeoning and Grappled."
+      },
+      {
+        "name": "Action",
+        "description": "The snake makes one Bite attack and uses Constrict."
+      }
+    ]
+  },
+  {
+    "name": "Giant Crab",
+    "cr": "0.125",
+    "crNumeric": 0.125,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 15,
+    "hp": "13 (3d8)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 13,
+      "dex": 13,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "stealth": 3
+    },
+    "senses": {
+      "blindsight": "30 ft.",
+      "passivePerception": 9
+    },
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "Can breathe air and water."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Claw",
+        "description": "If target is Medium or smaller, it has the Grappled condition (escape DC 11) from one of two claws."
+      }
+    ]
+  },
+  {
+    "name": "Giant Crocodile",
+    "cr": "5",
+    "crNumeric": 5.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "85 (9d12+27)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 21,
+      "dex": 9,
+      "con": 17,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "stealth": 5
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "Can hold breath for 1 hour."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "If target is Large or smaller, it has the Grappled condition (escape DC 15). While Grappled, target has the Restrained condition and can't be targeted by the crocodile’s Tail."
+      },
+      {
+        "name": "Tail",
+        "description": "If target is Large or smaller, it has the Prone condition."
+      },
+      {
+        "name": "Action",
+        "description": "Makes one Bite and one Tail attack."
+      }
+    ]
+  },
+  {
+    "name": "Giant Eagle",
+    "type": "Large Celestial",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "26 (4d10+4)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "80 ft."
+    },
+    "stats": {
+      "str": 16,
+      "dex": 17,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 6
+    },
+    "senses": {
+      "passivePerception": 16
+    },
+    "languages": "Celestial; understands Common and Primordial (Auran) but can’t speak them",
+    "actions": [
+      {
+        "name": "Rend",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d4+3 slashing + 1d6 radiant, Type slashing & radiant"
+      },
+      {
+        "name": "Action",
+        "description": "The eagle makes two Rend attacks."
+      }
+    ]
+  },
+  {
+    "name": "Giant Elk",
+    "type": "Huge Celestial",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "42 (5d12+10)",
+    "speed": {
+      "walkSpeed": "60 ft."
+    },
+    "stats": {
+      "str": 19,
+      "dex": 18,
+      "con": 14,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 4
+    },
+    "senses": {
+      "darkvision": "90 ft.",
+      "passivePerception": 14
+    },
+    "languages": "Celestial; understands Common, Elvish, and Sylvan but can’t speak them",
+    "actions": [
+      {
+        "name": "Ram",
+        "description": "If the elk moved 20 ft. straight toward the target immediately before the hit, the target takes an extra 5 (2d4) bludgeoning damage and is Prone."
+      }
+    ]
+  },
+  {
+    "name": "Giant Fire Beetle",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "4 (1d6+1)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 8,
+      "dex": 10,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "blindsight": "30 ft.",
+      "passivePerception": 8
+    },
+    "traits": [
+      {
+        "name": "Illumination: Sheds bright light in a 10 ft",
+        "description": "radius and dim light for additional 10 ft."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 1, Reach 5 ft., Damage 1, Type fire"
+      }
+    ]
+  },
+  {
+    "name": "Giant Frog",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "18 (4d8)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 12,
+      "dex": 13,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "30 ft.",
+      "passivePerception": 12
+    },
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "Can breathe air and water."
+      },
+      {
+        "name": "Standing Leap",
+        "description": "Long Jump up to 20 ft, High Jump up to 10 ft."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "If target is Medium or smaller, Grappled (escape DC 11)."
+      },
+      {
+        "name": "Swallow",
+        "description": "Swallows Small or smaller creature it's grappling. While swallowed, target is blinded and restrained, has total cover, and takes 2d4 acid damage at end of frog's next turn. If frog dies, target escapes using 5 ft of movement, exiting prone."
+      }
+    ]
+  },
+  {
+    "name": "Giant Goat",
+    "cr": "0.5",
+    "crNumeric": 0.5,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "19 (3d10 + 3)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 17,
+      "dex": 13,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Ram",
+        "description": "If the goat moved 20 ft. straight toward a Large or smaller target immediately before the hit, the target takes an extra 5 (2d4) bludgeoning damage and is Prone."
+      }
+    ]
+  },
+  {
+    "name": "Giant Hyena",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "45 (6d10+12)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 16,
+      "dex": 14,
+      "con": 14,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 2d6+3, Type piercing"
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Rampage (1/Day)",
+        "description": "After dealing damage to a creature that was already Bloodied, can move up to half speed and make one Bite attack."
+      }
+    ]
+  },
+  {
+    "name": "Giant Lizard",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "19 (3d10+3)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 12,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 10
+    },
+    "traits": [
+      {
+        "name": "Spider Climb",
+        "description": "Can climb difficult surfaces, including ceilings, without needing an ability check."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1d8+2, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Octopus",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "45 (7d10+7)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "swimSpeed": "60 ft."
+    },
+    "stats": {
+      "str": 17,
+      "dex": 13,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 5
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 14
+    },
+    "traits": [
+      {
+        "name": "Water Breathing: Can breathe only underwater",
+        "description": "Can hold breath for 1 hour outside water."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Tentacles",
+        "description": "If the target is Medium or smaller, Grappled (escape DC 13) from all 8 tentacles. While Grappled, target is Restrained."
+      }
+    ],
+    "reactions": [
+      {
+        "name": "Ink Cloud (1/Day)",
+        "description": "When damaged underwater, releases ink (10 ft. cube, heavily obscured 1 min or until dispersed) and moves up to Swim speed."
+      }
+    ]
+  },
+  {
+    "name": "Giant Owl",
+    "type": "Large Celestial",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "19 (3d10+3)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 13,
+      "dex": 15,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 6,
+      "stealth": 6
+    },
+    "senses": {
+      "darkvision": "120 ft.",
+      "passivePerception": 16
+    },
+    "languages": "Celestial; understands Common, Elvish, and Sylvan but can’t speak them",
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The owl doesn’t provoke Opportunity Attacks when it flies out of an enemy's reach."
+      },
+      {
+        "name": "",
+        "description": "Spellcasting: At will – Detect Evil and Good, Detect Magic, 1/day – Clairvoyance. Wisdom is the spellcasting ability."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Talons",
+        "description": "Attack bonus 4, Reach 5 ft., Damage 1d10+2, Type slashing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Rat",
+    "cr": "0.125",
+    "crNumeric": 0.125,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "7 (2d6)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 7,
+      "dex": 16,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 12
+    },
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "Advantage on attack roll if at least one ally is within 5 ft and not incapacitated."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d4+3, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Giant Seahorse",
+    "cr": "0.5",
+    "crNumeric": 0.5,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "16 (3d10)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 12,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 11
+    },
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "Can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Ram",
+        "description": "If the seahorse moved 20+ ft straight toward the target, damage is 2d8+2."
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Bubble Dash",
+        "description": "While underwater, moves up to half swim speed without provoking Opportunity Attacks."
+      }
+    ]
+  },
+  {
+    "name": "Giant Scorpion",
+    "cr": "3",
+    "crNumeric": 3.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 15,
+    "hp": "52 (7d10+14)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 16,
+      "dex": 13,
+      "con": 15,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "blindsight": "60 ft.",
+      "passivePerception": 9
+    },
+    "actions": [
+      {
+        "name": "Claw",
+        "description": "If target is Large or smaller, Grappled (escape DC 13) from one of two claws."
+      },
+      {
+        "name": "Sting",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d8+3 piercing + 2d10 poison, Type piercing & poison"
+      },
+      {
+        "name": "Action",
+        "description": "Makes two Claw and one Sting attack."
+      }
+    ]
+  },
+  {
+    "name": "Giant Shark",
+    "cr": "5",
+    "crNumeric": 5.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "92 (8d12+40)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "60 ft."
+    },
+    "stats": {
+      "str": 23,
+      "dex": 11,
+      "con": 21,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "blindsight": "60 ft.",
+      "passivePerception": 13
+    },
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "Can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Has advantage if target doesn't have all its HP."
+      },
+      {
+        "name": "Action",
+        "description": "Makes two Bite attacks."
+      }
+    ]
+  },
+  {
+    "name": "Giant Spider",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "26 (4d10+4)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 14,
+      "dex": 16,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 7
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 14
+    },
+    "traits": [
+      {
+        "name": "Spider Climb",
+        "description": "Can climb difficult surfaces, including ceilings, without ability check."
+      },
+      {
+        "name": "Web Walker",
+        "description": "Ignores movement restrictions caused by webs, knows location of any creature in contact with same web."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d8+3 piercing + 2d6 poison, Type piercing & poison"
+      },
+      {
+        "name": "Web (Recharge 5-6)",
+        "description": "DC 13 Dexterity save, one creature within 60 ft. Failure: Restrained until the web is destroyed (AC 10; HP 5; Vulnerable: Fire; Immune: Poison, Psychic)."
+      }
+    ]
+  },
+  {
+    "name": "Giant Squid",
+    "cr": "6",
+    "crNumeric": 6.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "120 (16d12+16)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "80 ft."
+    },
+    "stats": {
+      "str": 23,
+      "dex": 14,
+      "con": 12,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 6
+    },
+    "senses": {
+      "darkvision": "120 ft.",
+      "passivePerception": 16
+    },
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "Can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 9, Reach 5 ft., Damage 4d10+6, Type piercing"
+      },
+      {
+        "name": "Tentacle",
+        "description": "If target is Huge or smaller, Grappled (escape DC 16) from one of two tentacles; can pull target up to 10 ft straight toward squid."
+      },
+      {
+        "name": "Action",
+        "description": "Makes one Bite and one Tentacle attack."
+      }
+    ],
+    "reactions": [
+      {
+        "name": "Ink Cloud (1/Day)",
+        "description": "When damaged underwater, releases ink (15 ft. cube, heavily obscured 1 min or until dispersed) and moves up to Swim speed."
+      }
+    ]
+  },
+  {
+    "name": "Giant Toad",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 11,
+    "hp": "39 (6d10 + 6)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 13,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 10
+    },
+    "traits": [
+      {
+        "name": "",
+        "description": "Amphibious – the toad can breathe air and water"
+      },
+      {
+        "name": "",
+        "description": "Standing Leap – long jump up to 20 ft., high jump up to 10 ft. with or without a running start"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "If the target is a Medium or smaller creature, it is Grappled (escape DC 12)."
+      },
+      {
+        "name": "Swallow",
+        "description": "The toad swallows one Medium or smaller target it is grappling. The swallowed target is no longer Grappled, but it is Blinded and Restrained, has Total Cover against attacks originating outside the toad, and takes 10 (3d6) acid damage at the end of each of the toad’s turns. The toad can have only one target swallowed at a time and can’t use Bite while it has a target swallowed. A swallowed target exits Prone if the toad dies."
+      }
+    ]
+  },
+  {
+    "name": "Giant Venomous Snake",
+    "cr": "0.25",
+    "crNumeric": 0.25,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 14,
+    "hp": "11 (2d8+2)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "swimSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 10,
+      "dex": 18,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "blindsight": "10 ft.",
+      "passivePerception": 12
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 6, Reach 10 ft., Damage 1d4+4 piercing + 1d8 poison, Type piercing & poison"
+      }
+    ]
+  },
+  {
+    "name": "Giant Vulture",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Neutral Evil",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 200,
+    "proficiencyBonus": 2,
+    "ac": 10,
+    "hp": "25 (3d10 + 9)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 10,
+      "con": 16,
+      "int": 6,
+      "wis": 12,
+      "cha": 7
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "languages": "Understands Common but can’t speak",
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The vulture has Advantage on an attack roll against a creature if at least one of the vulture’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Gouge",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Piercing damage, and the target has the Poisoned condition until the end of its next turn."
+      }
+    ]
+  },
+  {
+    "name": "Giant Wasp",
+    "size": "Medium",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "1/2",
+    "crNumeric": 0.5,
+    "xp": 100,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "22 (5d8)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "50 ft."
+    },
+    "stats": {
+      "str": 10,
+      "dex": 14,
+      "con": 10,
+      "int": 1,
+      "wis": 10,
+      "cha": 3
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The wasp doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Sting",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage plus 5 (2d4) Poison damage."
+      }
+    ]
+  },
+  {
+    "name": "Giant Weasel",
+    "size": "Medium",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "1/8",
+    "crNumeric": 0.125,
+    "xp": 25,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "9 (2d8)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 11,
+      "dex": 17,
+      "con": 10,
+      "int": 4,
+      "wis": 12,
+      "cha": 5
+    },
+    "skills": {
+      "acrobatics": 5,
+      "perception": 3,
+      "stealth": 5
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Giant Wolf Spider",
+    "size": "Medium",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "1/4",
+    "crNumeric": 0.25,
+    "xp": 50,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "11 (2d8 + 2)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 12,
+      "dex": 16,
+      "con": 13,
+      "int": 3,
+      "wis": 12,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 7
+    },
+    "senses": {
+      "blindsight": "10 ft.",
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Spider Climb",
+        "description": "The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Piercing damage plus 5 (2d4) Poison damage."
+      }
+    ]
+  },
+  {
+    "name": "Goat",
+    "size": "Medium",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 10,
+    "hp": "4 (1d8)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 11,
+      "dex": 10,
+      "con": 11,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 12
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Ram",
+        "description": "Melee Attack Roll: +2, reach 5 ft. Hit: 1 Bludgeoning damage, or 2 (1d4) Bludgeoning damage if the goat moved 20+ feet straight toward the target immediately before the hit."
+      }
+    ]
+  },
+  {
+    "name": "Hawk",
+    "size": "Tiny",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "1 (1d4 - 1)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 5,
+      "dex": 16,
+      "con": 8,
+      "int": 2,
+      "wis": 14,
+      "cha": 6
+    },
+    "skills": {
+      "perception": 6
+    },
+    "senses": {
+      "passivePerception": 16
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Talons",
+        "description": "Melee Attack Roll: +5, reach 5 ft. Hit: 1 Slashing damage."
+      }
+    ]
+  },
+  {
+    "name": "Hippopotamus",
+    "size": "Large",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "4",
+    "crNumeric": 4.0,
+    "xp": 1100,
+    "proficiencyBonus": 2,
+    "ac": 14,
+    "hp": "82 (11d10 + 22)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 21,
+      "dex": 7,
+      "con": 15,
+      "int": 2,
+      "wis": 12,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "The hippopotamus can hold its breath for 10 minutes."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The hippopotamus makes two Bite attacks."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +7, reach 5 ft. Hit: 16 (2d10 + 5) Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Hunter Shark",
+    "size": "Large",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 450,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "45 (6d10 + 12)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 18,
+      "dex": 14,
+      "con": 15,
+      "int": 1,
+      "wis": 10,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "blindsight": "60 ft.",
+      "passivePerception": 12
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The shark can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +6 (with Advantage if the target doesn’t have all its Hit Points), reach 5 ft. Hit: 14 (3d6 + 4) Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Hyena",
+    "size": "Medium",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 11,
+    "hp": "5 (1d8 + 1)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 11,
+      "dex": 13,
+      "con": 12,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The hyena has Advantage on an attack roll against a creature if at least one of the hyena’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +2, reach 5 ft. Hit: 3 (1d6) Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Jackal",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "3 (1d6)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 8,
+      "dex": 15,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "90 ft.",
+      "passivePerception": 15
+    },
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 1, Reach 5 ft., Damage 1 (1d4 - 1), Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Killer Whale",
+    "cr": "3",
+    "crNumeric": 3.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "90 (12d12 + 12)",
+    "speed": {
+      "swimSpeed": "60 ft.",
+      "walkSpeed": "5 ft."
+    },
+    "stats": {
+      "str": 19,
+      "dex": 14,
+      "con": 13,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
+    "senses": {
+      "blindsight": "120 ft.",
+      "passivePerception": 13
+    },
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "The whale can hold its breath for 30 minutes."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 6, Reach 5 ft., Damage 21 (5d6 + 4), Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Lion",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 12,
+    "hp": "22 (4d10)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 17,
+      "dex": 15,
+      "con": 11,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "traits": [
+      {
+        "name": "",
+        "description": "Pack Tactics – advantage on attack rolls while an ally is within 5 ft. and not incapacitated"
+      },
+      {
+        "name": "Running Leap – with a 10 ft",
+        "description": "running start the lion can long jump 25 ft."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Rend",
+        "description": "Attack bonus 5, Reach 5 ft., Damage 1d8 + 3 slashing, Type slashing"
+      },
+      {
+        "name": "The lion makes two Rend attacks",
+        "description": "It can replace one attack with Roar."
+      },
+      {
+        "name": "Roar",
+        "description": "Wisdom save DC 11, one creature within 15 ft. On a failed save, the creature is Frightened until the start of the lion’s next turn."
+      }
+    ]
+  },
+  {
+    "name": "Lizard",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 10,
+    "hp": "2 (1d4)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "climbSpeed": "20 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 11,
+      "con": 10,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "darkvision": "30 ft.",
+      "passivePerception": 9
+    },
+    "traits": [
+      {
+        "name": "Spider Climb",
+        "description": "The lizard can climb difficult surfaces, including along ceilings, without needing to make an ability check."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Attack bonus 2, Reach 5 ft., Damage 1, Type piercing"
+      }
+    ]
+  },
+  {
+    "name": "Mammoth",
+    "cr": "6",
+    "crNumeric": 6.0,
+    "xp": 0,
+    "proficiencyBonus": null,
+    "ac": 13,
+    "hp": "126 (11d12 + 55)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 24,
+      "dex": 9,
+      "con": 21,
+      "int": null,
+      "wis": null,
+      "cha": null
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "actions": [
+      {
+        "name": "Gore",
+        "description": "If the target is a Huge or smaller creature and the mammoth moved 20+ feet straight toward it immediately before the hit, the target has the Prone condition."
+      },
+      {
+        "name": "Multiattack",
+        "description": "The mammoth makes two Gore attacks."
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Trample",
+        "description": "Dexterity Saving Throw DC 18; one prone creature within 5 ft. Failure: 29 (4d10 + 7) bludgeoning damage. Success: half damage."
+      }
+    ]
+  },
+  {
+    "name": "Mastiff",
+    "type": "Medium Beast",
+    "alignment": "Unaligned",
+    "cr": "1/8",
+    "crNumeric": 0.125,
+    "xp": 25,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "5 (1d8+1)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 13,
+      "dex": 14,
+      "con": 12,
+      "int": 3,
+      "wis": 12,
+      "cha": 7
+    },
+    "skills": {
+      "perception": 5
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 15
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6+1) Piercing damage. If the target is a Medium or smaller creature, it has the Prone condition."
+      }
+    ]
+  },
+  {
+    "name": "Mule",
+    "type": "Medium Beast",
+    "alignment": "Unaligned",
+    "cr": "1/8",
+    "crNumeric": 0.125,
+    "xp": 25,
+    "proficiencyBonus": 2,
+    "ac": 10,
+    "hp": "11 (2d8+2)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 14,
+      "dex": 10,
+      "con": 13,
+      "int": 2,
+      "wis": 10,
+      "cha": 5
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Beast of Burden",
+        "description": "The mule counts as one size larger for the purpose of determining its carrying capacity."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Hooves",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4+2) Bludgeoning damage."
+      }
+    ]
+  },
+  {
+    "name": "Octopus",
+    "type": "Small Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "3 (1d6)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 4,
+      "dex": 15,
+      "con": 11,
+      "int": 3,
+      "wis": 10,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 2,
+      "stealth": 6
+    },
+    "senses": {
+      "darkvision": "30 ft.",
+      "passivePerception": 12
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Compression",
+        "description": "The octopus can move through a space as narrow as 1 inch without expending extra movement."
+      },
+      {
+        "name": "Water Breathing",
+        "description": "The octopus can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Tentacles",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 1 Bludgeoning damage."
+      }
+    ],
+    "reactions": [
+      {
+        "name": "Ink Cloud (1/Day)",
+        "description": "Trigger: A creature ends its turn within 5 ft. of the octopus while underwater. Response: The octopus releases ink that fills a 5-foot Cube centered on itself, and the octopus moves up to its Swim Speed. The Cube is Heavily Obscured for 1 minute or until dispersed."
+      }
+    ]
+  },
+  {
+    "name": "Owl",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 11,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 3,
+      "dex": 13,
+      "con": 8,
+      "int": 2,
+      "wis": 12,
+      "cha": 7
+    },
+    "skills": {
+      "perception": 5,
+      "stealth": 5
+    },
+    "senses": {
+      "darkvision": "120 ft.",
+      "passivePerception": 15
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The owl doesn’t provoke an Opportunity Attack when it flies out of an enemy’s reach."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Talons",
+        "description": "Melee Attack Roll: +3, reach 5 ft. Hit: 1 Slashing damage."
+      }
+    ]
+  },
+  {
+    "name": "Panther",
+    "type": "Medium Beast",
+    "alignment": "Unaligned",
+    "cr": "1/4",
+    "crNumeric": 0.25,
+    "xp": 50,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "13 (3d8)",
+    "speed": {
+      "walkSpeed": "50 ft.",
+      "climbSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 14,
+      "dex": 16,
+      "con": 10,
+      "int": 3,
+      "wis": 14,
+      "cha": 7
+    },
+    "skills": {
+      "perception": 4,
+      "stealth": 7
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 14
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Rend",
+        "description": "Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Slashing damage."
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Nimble Escape",
+        "description": "The panther takes the Disengage or Hide action."
+      }
+    ]
+  },
+  {
+    "name": "Piranha",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "1 (1d4 - 1)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 16,
+      "con": 9,
+      "int": 1,
+      "wis": 7,
+      "cha": 2
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 8
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The piranha can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +5 (with Advantage if the target doesn't have all its Hit Points), reach 5 ft. Hit: 1 Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Plesiosaurus",
+    "type": "Large Beast (Dinosaur)",
+    "alignment": "Unaligned",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 450,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "68 (8d10 + 24)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "swimSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 18,
+      "dex": 15,
+      "con": 16,
+      "int": 2,
+      "wis": 12,
+      "cha": 5
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 4
+    },
+    "senses": {
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "The plesiosaurus can hold its breath for 1 hour."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +6, reach 10 ft. Hit: 11 (2d6 + 4) Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Polar Bear",
+    "type": "Large Beast",
+    "alignment": "Unaligned",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 450,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "42 (5d10 + 15)",
+    "speed": {
+      "walkSpeed": "40 ft.",
+      "swimSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 20,
+      "dex": 14,
+      "con": 16,
+      "int": 2,
+      "wis": 13,
+      "cha": 7
+    },
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 15
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The bear makes two Rend attacks."
+      },
+      {
+        "name": "Rend",
+        "description": "Melee Attack Roll: +7, reach 5 ft. Hit: 9 (1d8 + 5) Slashing damage."
+      }
+    ]
+  },
+  {
+    "name": "Pony",
+    "type": "Medium Beast",
+    "alignment": "Unaligned",
+    "cr": "1/8",
+    "crNumeric": 0.125,
+    "xp": 25,
+    "proficiencyBonus": 2,
+    "ac": 10,
+    "hp": "11 (2d8 + 2)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 15,
+      "dex": 10,
+      "con": 13,
+      "int": 2,
+      "wis": 11,
+      "cha": 7
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Hooves",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage."
+      }
+    ]
+  },
+  {
+    "name": "Pteranodon",
+    "type": "Medium Beast (Dinosaur)",
+    "alignment": "Unaligned",
+    "cr": "1/4",
+    "crNumeric": 0.25,
+    "xp": 50,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "13 (3d8)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "60 ft."
+    },
+    "stats": {
+      "str": 12,
+      "dex": 15,
+      "con": 10,
+      "int": 2,
+      "wis": 9,
+      "cha": 5
+    },
+    "skills": {
+      "perception": 1
+    },
+    "senses": {
+      "passivePerception": 11
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The pteranodon doesn't provoke an Opportunity Attack when it flies out of an enemy's reach."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Rat",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 10,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "climbSpeed": "20 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 11,
+      "con": 9,
+      "int": 2,
+      "wis": 10,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "darkvision": "30 ft.",
+      "passivePerception": 12
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Agile",
+        "description": "The rat doesn’t provoke an Opportunity Attack when it moves out of an enemy’s reach."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +2, reach 5 ft. Hit: 1 Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Raven",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "2 (1d4)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "50 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 14,
+      "con": 10,
+      "int": 5,
+      "wis": 13,
+      "cha": 6
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Mimicry",
+        "description": "The raven can mimic simple sounds it has heard, such as a whisper or chitter. A hearer can discern the sounds are imitations with a successful DC 10 Wisdom (Insight) check."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Beak",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Reef Shark",
+    "type": "Medium Beast",
+    "alignment": "Unaligned",
+    "cr": "1/2",
+    "crNumeric": 0.5,
+    "xp": 100,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "22 (4d8+4)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 14,
+      "dex": 15,
+      "con": 13,
+      "int": 1,
+      "wis": 10,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 2
+    },
+    "senses": {
+      "blindsight": "30 ft.",
+      "passivePerception": 12
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The shark has Advantage on an attack roll against a creature if at least one of the shark’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition."
+      },
+      {
+        "name": "Water Breathing",
+        "description": "The shark can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4+2) Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Rhinoceros",
+    "type": "Large Beast",
+    "alignment": "Unaligned",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 450,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "45 (6d10+12)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 21,
+      "dex": 8,
+      "con": 15,
+      "int": 2,
+      "wis": 12,
+      "cha": 6
+    },
+    "senses": {
+      "passivePerception": 11
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Gore",
+        "description": "Melee Attack Roll: +7, reach 5 ft. Hit: 14 (2d8+5) Piercing damage. If the target is a Large or smaller creature and the rhinoceros moved 20+ feet straight toward it before the hit, the target takes an extra 9 (2d8) Piercing damage and has the Prone condition."
+      }
+    ]
+  },
+  {
+    "name": "Riding Horse",
+    "type": "Large Beast",
+    "alignment": "Unaligned",
+    "cr": "1/4",
+    "crNumeric": 0.25,
+    "xp": 50,
+    "proficiencyBonus": 2,
+    "ac": 11,
+    "hp": "13 (2d10+2)",
+    "speed": {
+      "walkSpeed": "60 ft."
+    },
+    "stats": {
+      "str": 16,
+      "dex": 13,
+      "con": 12,
+      "int": 2,
+      "wis": 11,
+      "cha": 7
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Hooves",
+        "description": "Melee Attack: +5, reach 5 ft. Hit: 7 (1d8+3) Bludgeoning."
+      }
+    ]
+  },
+  {
+    "name": "Saber-Toothed Tiger",
+    "type": "Large Beast",
+    "alignment": "Unaligned",
+    "cr": "2",
+    "crNumeric": 2.0,
+    "xp": 450,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "52 (7d10+14)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 18,
+      "dex": 17,
+      "con": 15,
+      "int": 3,
+      "wis": 12,
+      "cha": 8
+    },
+    "skills": {
+      "perception": 5,
+      "stealth": 7
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 15
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Running Leap",
+        "description": "With a 10-foot running start, the tiger can Long Jump up to 25 feet."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The tiger makes two Rend attacks."
+      },
+      {
+        "name": "Rend",
+        "description": "Melee Attack: +6, reach 5 ft. Hit: 11 (2d6+4) Slashing."
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Nimble Escape",
+        "description": "The tiger takes the Disengage or Hide action."
+      }
+    ]
+  },
+  {
+    "name": "Scorpion",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 11,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "10 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 11,
+      "con": 8,
+      "int": 1,
+      "wis": 8,
+      "cha": 2
+    },
+    "senses": {
+      "blindsight": "10 ft.",
+      "passivePerception": 9
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Sting",
+        "description": "Melee Attack: +2, reach 5 ft. Hit: 1 Piercing + 3 (1d6) Poison."
+      }
+    ]
+  },
+  {
+    "name": "Seahorse",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 0,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "5 ft.",
+      "swimSpeed": "20 ft."
+    },
+    "stats": {
+      "str": 1,
+      "dex": 12,
+      "con": 8,
+      "int": 1,
+      "wis": 10,
+      "cha": 2
+    },
+    "skills": {
+      "perception": 2,
+      "stealth": 5
+    },
+    "senses": {
+      "passivePerception": 12
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The seahorse can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bubble Dash",
+        "description": "While underwater, the seahorse moves up to its Swim Speed without provoking Opportunity Attacks."
+      }
+    ]
+  },
+  {
+    "name": "Spider",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "20 ft.",
+      "climbSpeed": "20 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 14,
+      "con": 8,
+      "int": 1,
+      "wis": 10,
+      "cha": 2
+    },
+    "skills": {
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "30 ft.",
+      "passivePerception": 10
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Spider Climb",
+        "description": "The spider can climb difficult surfaces, including along ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Web Walker",
+        "description": "The spider ignores movement restrictions caused by webs, and knows the location of any other creature in contact with the same web."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack: +4, reach 5 ft. Hit: 1 Piercing + 2 (1d4) Poison."
+      }
+    ]
+  },
+  {
+    "name": "Tiger",
+    "type": "Large Beast",
+    "alignment": "Unaligned",
+    "cr": "1",
+    "crNumeric": 1.0,
+    "xp": 200,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "30 (4d10+8)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 17,
+      "dex": 16,
+      "con": 14,
+      "int": 3,
+      "wis": 12,
+      "cha": 8
+    },
+    "skills": {
+      "perception": 3,
+      "stealth": 7
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Rend",
+        "description": "Melee Attack: +5, reach 5 ft. Hit: 10 (2d6+3) Slashing. If target is Large or smaller, target is Prone."
+      }
+    ],
+    "bonusActions": [
+      {
+        "name": "Nimble Escape",
+        "description": "The tiger takes the Disengage or Hide action."
+      }
+    ]
+  },
+  {
+    "name": "Triceratops",
+    "type": "Huge Beast (Dinosaur)",
+    "alignment": "Unaligned",
+    "cr": "5",
+    "crNumeric": 5.0,
+    "xp": 1800,
+    "proficiencyBonus": 3,
+    "ac": 14,
+    "hp": "114 (12d12+36)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 22,
+      "dex": 9,
+      "con": 17,
+      "int": 2,
+      "wis": 11,
+      "cha": 5
+    },
+    "senses": {
+      "passivePerception": 10
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The triceratops makes two Gore attacks."
+      },
+      {
+        "name": "Gore",
+        "description": "Melee Attack: +9, reach 5 ft. Hit: 19 (2d12+6) Piercing. If target is Huge or smaller and triceratops moved 20+ ft straight, target takes 9 (2d8) more and is Prone."
+      }
+    ]
+  },
+  {
+    "name": "Tyrannosaurus Rex",
+    "type": "Huge Beast",
+    "alignment": "Unaligned",
+    "cr": "8",
+    "crNumeric": 8.0,
+    "xp": 3900,
+    "proficiencyBonus": 3,
+    "ac": 13,
+    "hp": "136 (13d12+52)",
+    "speed": {
+      "walkSpeed": "50 ft."
+    },
+    "stats": {
+      "str": 25,
+      "dex": 10,
+      "con": 19,
+      "int": 2,
+      "wis": 12,
+      "cha": 9
+    },
+    "skills": {
+      "perception": 4
+    },
+    "senses": {
+      "passivePerception": 14
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The tyrannosaurus makes one Bite attack and one Tail attack."
+      },
+      {
+        "name": "Bite",
+        "description": "Melee Attack: +10, reach 10 ft. Hit: 33 (4d12+7) Piercing. Grappled (escape DC 17). Restrained."
+      },
+      {
+        "name": "Tail",
+        "description": "Melee Attack: +10, reach 15 ft. Hit: 25 (4d8+7) Bludgeoning. If Huge or smaller, target is Prone."
+      }
+    ]
+  },
+  {
+    "name": "Venomous Snake",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "1/8",
+    "crNumeric": 0.125,
+    "xp": 25,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "5 (2d4)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "swimSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 2,
+      "dex": 15,
+      "con": 11,
+      "int": 1,
+      "wis": 10,
+      "cha": 3
+    },
+    "senses": {
+      "blindsight": "10 ft.",
+      "passivePerception": 10
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack: +4, reach 5 ft. Hit: 4 (1d4+2) Piercing plus 3 (1d6) Poison."
+      }
+    ]
+  },
+  {
+    "name": "Vulture",
+    "type": "Medium Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 10,
+    "hp": "5 (1d8+1)",
+    "speed": {
+      "walkSpeed": "10 ft.",
+      "flySpeed": "50 ft."
+    },
+    "stats": {
+      "str": 7,
+      "dex": 10,
+      "con": 13,
+      "int": 2,
+      "wis": 12,
+      "cha": 4
+    },
+    "skills": {
+      "perception": 3
+    },
+    "senses": {
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The vulture has Advantage on an attack roll against a creature if at least one of the vulture’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Beak",
+        "description": "Melee Attack: +2, reach 5 ft. Hit: 2 (1d4) Piercing."
+      }
+    ]
+  },
+  {
+    "name": "Warhorse",
+    "type": "Large Beast",
+    "alignment": "Unaligned",
+    "cr": "1/2",
+    "crNumeric": 0.5,
+    "xp": 100,
+    "proficiencyBonus": 2,
+    "ac": 11,
+    "hp": "19 (3d10+3)",
+    "speed": {
+      "walkSpeed": "60 ft."
+    },
+    "stats": {
+      "str": 18,
+      "dex": 12,
+      "con": 13,
+      "int": 2,
+      "wis": 12,
+      "cha": 7
+    },
+    "senses": {
+      "passivePerception": 11
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Hooves",
+        "description": "Melee Attack: +6, reach 5 ft. Hit: 9 (2d4+4) Bludgeoning. If the target is a Large or smaller creature and the horse moved 20+ feet straight toward it before the hit, the target takes an extra 5 (2d4) Bludgeoning and has the Prone condition."
+      }
+    ]
+  },
+  {
+    "name": "Weasel",
+    "type": "Tiny Beast",
+    "alignment": "Unaligned",
+    "cr": "0",
+    "crNumeric": 0.0,
+    "xp": 10,
+    "proficiencyBonus": 2,
+    "ac": 13,
+    "hp": "1 (1d4-1)",
+    "speed": {
+      "walkSpeed": "30 ft.",
+      "climbSpeed": "30 ft."
+    },
+    "stats": {
+      "str": 3,
+      "dex": 16,
+      "con": 8,
+      "int": 2,
+      "wis": 12,
+      "cha": 3
+    },
+    "skills": {
+      "acrobatics": 5,
+      "perception": 3,
+      "stealth": 5
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 13
+    },
+    "languages": "None",
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack: +5, reach 5 ft. Hit: 1 Piercing damage."
+      }
+    ]
+  },
+  {
+    "name": "Wolf",
+    "type": "Medium Beast",
+    "alignment": "Unaligned",
+    "cr": "1/4",
+    "crNumeric": 0.25,
+    "xp": 50,
+    "proficiencyBonus": 2,
+    "ac": 12,
+    "hp": "11 (2d8+2)",
+    "speed": {
+      "walkSpeed": "40 ft."
+    },
+    "stats": {
+      "str": 14,
+      "dex": 15,
+      "con": 12,
+      "int": 3,
+      "wis": 12,
+      "cha": 6
+    },
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
+    "senses": {
+      "darkvision": "60 ft.",
+      "passivePerception": 15
+    },
+    "languages": "None",
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The wolf has Advantage on attack rolls against a creature if at least one of the wolf’s allies is within 5 feet of the creature and the ally doesn’t have the Incapacitated condition."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Bite",
+        "description": "Melee Attack: +4, reach 5 ft. Hit: 5 (1d6+2) Piercing. If the target is a Medium or smaller creature, it has the Prone condition."
+      }
+    ]
+  }
+]
