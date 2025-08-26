@@ -152,7 +152,7 @@ const toggleViewMode = () => {
         <div class="active-header">
           <h2 class="active-title">
             <span class="active-icon">⚔️</span>
-            Active Beasts ({{ active.list.length }}/3)
+            Active Beasts ({{ active.list.length }}/4)
           </h2>
         </div>
         <div class="active-grid">

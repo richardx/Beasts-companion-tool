@@ -22,7 +22,7 @@ export const useActiveBeasts = defineStore('activeBeasts', {
     toggle(beast) {
       if (this.contains(beast.name)) {
         this.list = this.list.filter((b) => b.name !== beast.name)
-      } else if (this.list.length < 3) {
+      } else if (this.list.length < 4) {
         this.list.push(beast)
       }
       this.persist()

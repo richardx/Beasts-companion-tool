@@ -369,7 +369,7 @@
     "actions": [
       {
         "name": "Gore",
-        "description": "If Medium/smaller and boar moved 20+ ft, target Prone and takes extra 1d6 piercing"
+        "description": "Melee Attack Roll: +3, reach 5 ft. Hit: 1d6 + 1 Piercing damage. If the target is a Medium or smaller creature and the boar moved 20+ feet straight toward it immediately before the hit, the target takes an extra 1d6 Piercing damage and has the Prone condition."
       }
     ]
   },
@@ -403,14 +403,14 @@
     "actions": [
       {
         "name": "Bite",
-        "description": "Attack bonus 5, Reach 5 ft., Damage 1d8+3, Type piercing"
+        "description": "Melee Attack Roll: +5, reach 5 ft. Hit: 1d8 + 3 Piercing damage"
       },
       {
         "name": "Claw",
-        "description": "If target is Large or smaller, it has the Prone condition."
+        "description": "Melee Attack Roll: +5, reach 5 ft. Hit: 1d4 + 3 Slashing damage. If the target is a Large or smaller creature, it has the Prone condition."
       },
       {
-        "name": "Action",
+        "name": "Multiattack",
         "description": "The bear makes one Bite attack and one Claw attack."
       }
     ]
@@ -813,7 +813,7 @@
     "actions": [
       {
         "name": "Ram",
-        "description": "If target is Large or smaller and elk moved 20+ ft straight before the hit, takes extra 2d6 bludgeoning and has Prone condition."
+        "description": "Melee Attack Roll: +5, reach 5 ft. Hit: 1d6 + 3 Bludgeoning damage. If the target is a Large or smaller creature and the elk moved 20+ feet straight toward it immediately before the hit, the target takes an extra 1d6 Bludgeoning damage and has the Prone condition."
       }
     ]
   },
@@ -1082,7 +1082,7 @@
     "actions": [
       {
         "name": "Bite",
-        "description": "Target has the Poisoned condition until the start of centipede's next turn."
+        "description": "Melee Attack Roll: +4, reach 5 ft. Hit: 1d4 + 2 Piercing damage, and the target has the Poisoned condition until the start of the centipede’s next turn"
       }
     ]
   },
@@ -3292,7 +3292,7 @@
     "actions": [
       {
         "name": "Bite",
-        "description": "Melee Attack: +4, reach 5 ft. Hit: 1 Piercing + 2 (1d4) Poison."
+        "description": "Melee Attack: +4, reach 5 ft. Hit: 1 Piercing + 1d4 Poison."
       }
     ]
   },
