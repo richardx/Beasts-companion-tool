@@ -8,8 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/",
-    "tauri": "tauri"
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@vueuse/core": "^13.4.0",
@@ -20,8 +19,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
-    "@tauri-apps/cli": "^2.8.3",
-    "@vitejs/plugin-vue": "^5.2.3",
+"@vitejs/plugin-vue": "^5.2.3",
     "@vue/eslint-config-prettier": "^10.2.0",
     "eslint": "^9.22.0",
     "eslint-plugin-vue": "~10.0.0",

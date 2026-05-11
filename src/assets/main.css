@@ -1,28 +1,23 @@
 /* ---------- main.css ---------- */
-@import './base.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
 
 /* Root container – fylder hele vinduet */
 #app {
   width: 100%;
   margin: 0;
-  padding: 0;              /* behold evt. padding i dine views/components */
+  padding: 0;
   font-weight: normal;
-  box-sizing: border-box;  /* så indre padding tæller med i bredden */
+  box-sizing: border-box;
 }
 
-/* Links (som i skabelonen) */
-a,
-.green {
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
 }
 
 /* Store skærme – fjern centrerende flex/grid-layout */

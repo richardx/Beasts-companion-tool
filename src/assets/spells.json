@@ -1,0 +1,477 @@
+[
+  {
+    "name": "Druidcraft",
+    "level": 0,
+    "school": "Transmutation",
+    "castingTime": "1 Action",
+    "range": "30 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["utility"],
+    "description": "Whispering to the spirits of nature, you create one of the following effects within range.\n\nWeather Sensor. You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.\n\nBloom. You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.\n\nSensory Effect. You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube.\n\nFire Play. You light or snuff out a candle, a torch, or a campfire.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Guidance",
+    "level": 0,
+    "school": "Divination",
+    "castingTime": "1 Action",
+    "range": "Touch",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["support"],
+    "description": "You touch a willing creature and choose a skill. Until the spell ends, the creature adds 1d4 to any ability check using the chosen skill.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Message",
+    "level": 0,
+    "school": "Transmutation",
+    "castingTime": "1 Action",
+    "range": "120 feet",
+    "components": {
+      "verbal": false,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a copper wire"
+    },
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["utility"],
+    "description": "You point toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.\n\nYou can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence; 1 foot of stone, metal, or wood; or a thin sheet of lead blocks the spell.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Spare the Dying",
+    "level": 0,
+    "school": "Necromancy",
+    "castingTime": "1 Action",
+    "range": "15 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["support"],
+    "description": "Choose a creature within range that has 0 Hit Points and isn't dead. The creature becomes Stable.\n\nCantrip Upgrade. The range doubles when you reach levels 5 (30 feet), 11 (60 feet), and 17 (120 feet).",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Starry Wisp",
+    "level": 0,
+    "school": "Evocation",
+    "castingTime": "1 Action",
+    "range": "60 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["damage", "control"],
+    "description": "You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d8 Radiant damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can't benefit from the Invisible condition.\n\nCantrip Upgrade. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).\nYou can cast this spell while you're in a Wild Shape form.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Create or Destroy Water",
+    "level": 1,
+    "school": "Transmutation",
+    "castingTime": "1 Action",
+    "range": "30 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a mix of water and sand"
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["utility"],
+    "description": "You do one of the following:\n\nCreate Water. You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot Cube within range, extinguishing exposed flames there.\n\nDestroy Water. You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot Cube within range.",
+    "atHigherLevels": "Using a Higher-Level Spell Slot. You create or destroy 10 additional gallons of water, or the size of the Cube increases by 5 feet, for each spell slot level above 1."
+  },
+  {
+    "name": "Cure Wounds",
+    "level": 1,
+    "school": "Abjuration",
+    "castingTime": "1 Action",
+    "range": "Touch",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["support"],
+    "description": "A creature you touch regains a number of Hit Points equal to 2d8 plus your spellcasting ability modifier.\n\nYou can cast this spell while you're in a Wild Shape form.",
+    "atHigherLevels": "Using a Higher-Level Spell Slot. The healing increases by 2d8 for each spell slot level above 1."
+  },
+  {
+    "name": "Find Familiar",
+    "level": 1,
+    "school": "Conjuration",
+    "castingTime": "1 Action",
+    "range": "10 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "burning incense worth 10+ GP, which the spell consumes"
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "categories": ["utility"],
+    "description": "You gain the service of a familiar, a spirit that takes an animal form you choose: Bat, Cat, Frog, Hawk, Lizard, Octopus, Owl, Rat, Raven, Spider, Weasel, or another Beast that has a Challenge Rating of 0. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a Celestial, Fey, or Fiend (your choice) instead of a Beast. Your familiar acts independently of you, but it obeys your commands.\n\nTelepathic Connection. While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as a Bonus Action, you can see through the familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses it has.\n\nFinally, when you cast a spell with a range of touch, your familiar can deliver the touch. Your familiar must be within 100 feet of you, and it must take a Reaction to deliver the touch when you cast the spell.\n\nCombat. The familiar is an ally to you and your allies. It rolls its own Initiative and acts on its own turn. A familiar can't attack, but it can take other actions as normal.\n\nDisappearance of the Familiar. When the familiar drops to 0 Hit Points, it disappears. It reappears after you cast this spell again. As a Magic action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As a Magic action while it is temporarily dismissed, you can cause it to reappear in an unoccupied space within 30 feet of you. Whenever the familiar drops to 0 Hit Points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.\n\nOne Familiar Only. You can't have more than one familiar at a time. If you cast this spell while you have a familiar, you instead cause it to adopt a new eligible form.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Goodberry",
+    "level": 1,
+    "school": "Conjuration",
+    "castingTime": "1 Action",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a sprig of mistletoe"
+    },
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["support", "utility"],
+    "description": "Ten berries appear in your hand and are infused with magic for the duration. A creature can take a Bonus Action to eat one berry. Eating a berry restores 1 Hit Point, and the berry provides enough nourishment to sustain a creature for one day.\n\nUneaten berries disappear when the spell ends.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Speak with Animals",
+    "level": 1,
+    "school": "Divination",
+    "castingTime": "1 Action",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "10 minutes",
+    "concentration": false,
+    "ritual": true,
+    "categories": ["utility"],
+    "description": "For the duration, you can comprehend and verbally communicate with Beasts, and you can use any of the Influence action's skill options with them.\n\nMost Beasts have little to say about topics that don't pertain to survival or companionship, but at minimum, a Beast can give you information about nearby locations and monsters, including whatever it has perceived within the past day.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Augury",
+    "level": 2,
+    "school": "Divination",
+    "castingTime": "1 Minute",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "specially marked sticks, bones, cards, or other divinatory tokens worth 25+ GP"
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "categories": ["utility"],
+    "description": "You receive an omen from an otherworldly entity about the results of a course of action that you plan to take within the next 30 minutes. The DM chooses the omen from the Omens table.\nOmens Omen \tFor Results That Will Be...\nWeal \tGood\nWoe \tBad\nWeal and woe \tGood and bad\nIndifference \tNeither good nor bad\n\nThe spell doesn't account for circumstances, such as other spells, that might change the results.\n\nIf you cast the spell more than once before finishing a Long Rest, there is a cumulative 25 percent chance for each casting after the first that you get no answer.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Calm Emotions",
+    "level": 2,
+    "school": "Enchantment",
+    "castingTime": "1 Action",
+    "range": "60 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["support", "control"],
+    "description": "Each Humanoid in a 20-foot-radius Sphere centered on a point you choose within range must succeed on a Charisma saving throw or be affected by one of the following effects (choose for each creature):\n\n The creature has Immunity to the Charmed and Frightened conditions until the spell ends. If the creature was already Charmed or Frightened, those conditions are suppressed for the duration.\n The creature becomes Indifferent about creatures of your choice that it's Hostile toward. This indifference ends if the target takes damage or witnesses its allies taking damage. When the spell ends, the creature's attitude returns to normal.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Lesser Restoration",
+    "level": 2,
+    "school": "Abjuration",
+    "castingTime": "1 Bonus Action",
+    "range": "Touch",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["support"],
+    "description": "You touch a creature and end one condition on it: Blinded, Deafened, Paralyzed, or Poisoned.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Moonbeam",
+    "level": 2,
+    "school": "Evocation",
+    "castingTime": "1 Action",
+    "range": "120 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a moonseed leaf"
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["damage", "control"],
+    "description": "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high Cylinder centered on a point within range. Until the spell ends, Dim Light fills the Cylinder, and you can take a Magic action on later turns to move the Cylinder up to 60 feet.\n\nWhen the Cylinder appears, each creature in it makes a Constitution saving throw. On a failed save, a creature takes 2d10 Radiant damage, and if the creature is shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder. On a successful save, a creature takes half as much damage only. A creature also makes this save when the spell's area moves into its space and when it enters the spell's area or ends its turn there. A creature makes this save only once per turn.\n\nYou can cast this spell while you're in a Wild Shape form.",
+    "atHigherLevels": "Using a Higher-Level Spell Slot. The damage increases by 1d10 for each spell slot level above 2."
+  },
+  {
+    "name": "Pass without Trace",
+    "level": 2,
+    "school": "Abjuration",
+    "castingTime": "1 Action",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "ashes from burned mistletoe"
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["support", "utility"],
+    "description": "You radiate a concealing aura in a 30-foot Emanation for the duration. While in the aura, you and each creature you choose have a +10 bonus to Dexterity (Stealth) checks and leave no tracks.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Conjure Animals",
+    "level": 3,
+    "school": "Conjuration",
+    "castingTime": "1 Action",
+    "range": "60 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["damage", "support"],
+    "description": "You conjure nature spirits that appear as a Large pack of spectral, intangible animals in an unoccupied space you can see within range. The pack lasts for the duration, and you choose the spirits' animal form, such as wolves, serpents, or birds.\n\nYou have Advantage on Strength saving throws while you're within 5 feet of the pack, and when you move on your turn, you can also move the pack up to 30 feet to an unoccupied space you can see.\n\nWhenever the pack moves within 10 feet of a creature you can see and whenever a creature you can see enters a space within 10 feet of the pack or ends its turn there, you can force that creature to make a Dexterity saving throw. On a failed save, the creature takes 3d10 Slashing damage. A creature makes this save only once per turn.\n\nYou can cast this spell while you're in a Wild Shape form.",
+    "atHigherLevels": "Using a Higher-Level Spell Slot. The damage increases by 1d10 for each spell slot level above 3."
+  },
+  {
+    "name": "Dispel Magic",
+    "level": 3,
+    "school": "Abjuration",
+    "castingTime": "1 Action",
+    "range": "120 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["control", "utility"],
+    "description": "Choose one creature, object, or magical effect within range. Any ongoing spell of level 3 or lower on the target ends. For each ongoing spell of level 4 or higher on the target, make an ability check using your spellcasting ability (DC 10 plus that spell's level). On a successful check, the spell ends.",
+    "atHigherLevels": "Using a Higher-Level Spell Slot. You automatically end a spell on the target if the spell's level is equal to or less than the level of the spell slot you use."
+  },
+  {
+    "name": "Plant Growth",
+    "level": 3,
+    "school": "Transmutation",
+    "castingTime": "Special (1 Action or 8 hours)",
+    "range": "150 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "categories": ["control", "utility"],
+    "description": "This spell channels vitality into plants. The casting time you use determines whether the spell has the Overgrowth or the Enrichment effect below.\n\nOvergrowth. Choose a point within range. All normal plants in a 100-foot-radius Sphere centered on that point become thick and overgrown. A creature moving through that area must spend 4 feet of movement for every 1 foot it moves. You can exclude one or more areas of any size within the spell's area from being affected.\n\nEnrichment. All plants in a half-mile radius centered on a point within range become enriched for 365 days. The plants yield twice the normal amount of food when harvested. They can benefit from only one Plant Growth per year.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Water Breathing",
+    "level": 3,
+    "school": "Transmutation",
+    "castingTime": "1 Action",
+    "range": "30 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a short reed"
+    },
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": true,
+    "categories": ["support", "utility"],
+    "description": "This spell grants up to ten willing creatures of your choice within range the ability to breathe underwater until the spell ends. Affected creatures also retain their normal mode of respiration.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Water Walk",
+    "level": 3,
+    "school": "Transmutation",
+    "castingTime": "1 Action",
+    "range": "30 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a piece of cork"
+    },
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "categories": ["support", "utility"],
+    "description": "This spell grants the ability to move across any liquid surface—such as water, acid, mud, snow, quicksand, or lava—as if it were harmless solid ground (creatures crossing molten lava can still take damage from the heat). Up to ten willing creatures of your choice within range gain this ability for the duration.\n\nAn affected target must take a Bonus Action to pass from the liquid's surface into the liquid itself and vice versa, but if the target falls into the liquid, the target passes through the surface into the liquid below.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Wind Wall",
+    "level": 3,
+    "school": "Evocation",
+    "castingTime": "1 Action",
+    "range": "120 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a fan and a feather"
+    },
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["damage", "control"],
+    "description": "A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.\n\nWhen the wall appears, each creature in its area makes a Strength saving throw, taking 4d8 Bludgeoning damage on a failed save or half as much damage on a successful one.\n\nThe strong wind keeps fog, smoke, and other gases at bay. Small or smaller flying creatures or objects can't pass through the wall. Loose, lightweight materials brought into the wall fly upward. Arrows, bolts, and other ordinary projectiles launched at targets behind the wall are deflected upward and miss automatically. Boulders hurled by Giants or siege engines, and similar projectiles, are unaffected. Creatures in gaseous form can't pass through it.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Conjure Woodland Beings",
+    "level": 4,
+    "school": "Conjuration",
+    "castingTime": "1 Action",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["damage", "support"],
+    "description": "You conjure nature spirits that flit around you in a 10-foot Emanation for the duration. Whenever the Emanation enters the space of a creature you can see and whenever a creature you can see enters the Emanation or ends its turn there, you can force that creature to make a Wisdom saving throw. The creature takes 5d8 Force damage on a failed save or half as much damage on a successful one. A creature makes this save only once per turn.\n\nIn addition, you can take the Disengage action as a Bonus Action for the spell's duration.",
+    "atHigherLevels": "Using a Higher-Level Spell Slot. The damage increases by 1d8 for each spell slot level above 4."
+  },
+  {
+    "name": "Divination",
+    "level": 4,
+    "school": "Divination",
+    "castingTime": "1 Action",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "incense worth 25+ GP, which the spell consumes"
+    },
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "categories": ["utility"],
+    "description": "This spell puts you in contact with a god or a god's servants. You ask one question about a specific goal, event, or activity to occur within 7 days. The DM offers a truthful reply, which might be a short phrase or cryptic rhyme. The spell doesn't account for circumstances that might change the answer, such as the casting of other spells.\n\nIf you cast the spell more than once before finishing a Long Rest, there is a cumulative 25 percent chance for each casting after the first that you get no answer.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Fount of Moonlight",
+    "level": 4,
+    "school": "Evocation",
+    "castingTime": "1 Action",
+    "range": "Self",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": false,
+      "materialDesc": ""
+    },
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["damage", "support", "control"],
+    "description": "A cool light wreathes your body for the duration, emitting Bright Light in a 20-foot radius and Dim Light for an additional 20 feet.\n\nUntil the spell ends, you have Resistance to Radiant damage, and your melee attacks deal an extra 2d6 Radiant damage on a hit.\n\nIn addition, immediately after you take damage from a creature you can see within 60 feet of yourself, you can take a Reaction to force the creature to make a Constitution saving throw. On a failed save, the creature has the Blinded condition until the end of your next turn.\nYou can cast this spell while you're in a Wild Shape form.",
+    "atHigherLevels": ""
+  },
+  {
+    "name": "Polymorph",
+    "level": 4,
+    "school": "Transmutation",
+    "castingTime": "1 Action",
+    "range": "60 feet",
+    "components": {
+      "verbal": true,
+      "somatic": true,
+      "material": true,
+      "materialDesc": "a caterpillar cocoon"
+    },
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "categories": ["control", "utility"],
+    "description": "You attempt to transform a creature that you can see within range into a Beast. The target must succeed on a Wisdom saving throw or shape-shift into Beast form for the duration. That form can be any Beast you choose that has a Challenge Rating equal to or less than the target's (or the target's level if it doesn't have a Challenge Rating). The target's game statistics are replaced by the stat block of the chosen Beast, but the target retains its alignment, personality, creature type, Hit Points, and Hit Point Dice.\n\nThe target gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the spell ends. The spell ends early on the target if it has no Temporary Hit Points left.\n\nThe target is limited in the actions it can perform by the anatomy of its new form, and it can't speak or cast spells.\n\nThe target's gear melds into the new form. The creature can't use or otherwise benefit from any of that equipment.",
+    "atHigherLevels": ""
+  }
+]

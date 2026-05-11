@@ -4,7 +4,6 @@ A modern Vue.js application for browsing, filtering, and managing D&D 5e beasts 
 
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=vue.js&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 ![Pinia](https://img.shields.io/badge/Pinia-FFD859?style=flat&logo=pinia&logoColor=black)
 
 ## ✨ Features
@@ -23,7 +22,6 @@ A modern Vue.js application for browsing, filtering, and managing D&D 5e beasts 
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
 
 ### Installation
 
@@ -47,19 +45,17 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 druid-app/
 ├── src/
 │   ├── components/
-│   │   ├── ui/              # Reusable UI components
-│   │   ├── BeastCard.vue    # Beast display component
-│   │   └── FilterSidebar.vue # Filter interface
+│   │   ├── BeastCard.vue       # Beast display component
+│   │   └── FilterSidebar.vue   # Filter interface
 │   ├── stores/
-│   │   ├── useFilters.js    # Pinia store for filters
-│   │   └── activeBeasts.js  # Active beasts state
+│   │   ├── useFilters.js       # Pinia store for filters
+│   │   └── activeBeasts.js     # Active beasts state
 │   ├── views/
-│   │   └── HomeView.vue     # Main page
+│   │   └── HomeView.vue        # Main page
 │   └── assets/
-│       └── beasts.json      # D&D 2024 beasts data
-├── beast_images/            # Beast images (.webp)
-├── 5etools-img/            # Additional D&D images
-└── public/                 # Static files
+│       └── beasts.json         # D&D 2024 beasts data
+├── beast_images/               # Beast images (.webp)
+└── public/                     # Static files
 ```
 
 ## 🎮 Usage
@@ -108,7 +104,7 @@ npm run format
 - **Framework**: Vue 3 with Composition API
 - **Build Tool**: Vite
 - **State Management**: Pinia
-- **Styling**: Tailwind CSS + custom CSS
+- **Styling**: Scoped CSS in `.vue` files
 - **Icons**: Lucide Vue
 - **Utilities**: VueUse
 - **Data Persistence**: localStorage via VueUse

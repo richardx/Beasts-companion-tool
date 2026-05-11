@@ -328,11 +328,17 @@ const props = defineProps({
   lockExpanded: { type: Boolean, default: false },
   forceExpanded: { type: Boolean, default: false },
   compactMode: { type: Boolean, default: false },
+  beastType: { type: String, default: 'wildshape' }, // 'wildshape' | 'polymorph'
+  showAllStats: { type: Boolean, default: false },
 })
 
 // ── EXPANSION STATE ───────────────────────────────────────────
 const activeStore = useActiveBeasts()
-const isActive = computed(() => activeStore.contains(props.beast.name))
+const isActive = computed(() =>
+  props.beastType === 'polymorph'
+    ? activeStore.containsPolymorph(props.beast.name)
+    : activeStore.containsWildshape(props.beast.name),
+)
 const expanded = ref(props.lockExpanded || props.forceExpanded)
 
 // Watch for forceExpanded changes
@@ -371,7 +377,7 @@ const handleToggle = () => {
   if (props.lockExpanded) return
   expanded.value = !expanded.value
 }
-const toggleActive = () => activeStore.toggle(props.beast)
+const toggleActive = () => activeStore.toggle(props.beast, props.beastType)
 
 // ── IMG HANDLING ──────────────────────────────────────────────
 const exts = ['webp', 'png', 'jpg']
@@ -385,7 +391,11 @@ const onImgError = () => {
 
 // ── HELPERS / COMPUTEDS ───────────────────────────────────────
 const signed = (n) => (n >= 0 ? `+${n}` : n)
-const abilityOrder = ['str', 'dex', 'con']
+const abilityOrder = computed(() =>
+  props.showAllStats
+    ? ['str', 'dex', 'con', 'int', 'wis', 'cha']
+    : ['str', 'dex', 'con'],
+)
 const abilityMod = (s) => (s ? Math.floor((s - 10) / 2) : 0)
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1)
 const labelSpeed = (k) => cap(k.replace('Speed', ''))
@@ -447,7 +457,7 @@ const conditionText = computed(() => {
 // CR class helper
 const getCRClass = (cr) => {
   const crNum = parseFloat(cr)
-  if (crNum >= 4) return 'cr-high'
+  if (crNum >= 5) return 'cr-high'
   if (crNum >= 2) return 'cr-medium'
   return 'cr-low'
 }
@@ -657,19 +667,22 @@ const cardRef = ref(null)
 .token-thumb {
   width: 56px;
   height: 56px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   flex-shrink: 0;
   background: #262626;
   border: 1px solid #404040;
+  outline: 2px solid #dc262644;
 }
 
 .detail-thumb {
   width: 96px;
   height: 96px;
   margin-left: auto;
-  border-radius: 0.625rem;
+  border-radius: 50%;
+  object-fit: cover;
+  outline: 2px solid #dc262644;
 }
 
 /********** ACTION BUTTONS **********/

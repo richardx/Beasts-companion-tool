@@ -1,52 +1,44 @@
 import { defineStore } from 'pinia'
 
-const STORAGE_KEY = 'activeBeasts'
-
 export const useActiveBeasts = defineStore('activeBeasts', {
-  // ────────────────────────────────────────────────
   state: () => ({
-    /** @type {Array<Object>} */
-    list: loadFromLocal(),
+    wildshape: loadFromLocal('activeWildshape'),
+    polymorph: loadFromLocal('activePolymorph'),
   }),
 
-  // ────────────────────────────────────────────────
   getters: {
-    /** true hvis navnet allerede ligger i listen */
-    contains: (state) => (name) =>
-      state.list.some((b) => b.name === name),
+    containsWildshape: (state) => (name) => state.wildshape?.name === name,
+    containsPolymorph: (state) => (name) => state.polymorph?.name === name,
   },
 
-  // ────────────────────────────────────────────────
   actions: {
-    /** Tilføj/fjern – og gem bagefter */
-    toggle(beast) {
-      if (this.contains(beast.name)) {
-        this.list = this.list.filter((b) => b.name !== beast.name)
-      } else if (this.list.length < 4) {
-        this.list.push(beast)
+    toggle(beast, type = 'wildshape') {
+      if (type === 'polymorph') {
+        this.polymorph = this.polymorph?.name === beast.name ? null : beast
+      } else {
+        this.wildshape = this.wildshape?.name === beast.name ? null : beast
       }
       this.persist()
     },
 
-    /** Tøm hele listen */
     clear() {
-      this.list = []
+      this.wildshape = null
+      this.polymorph = null
       this.persist()
     },
 
-    /** Skriv til localStorage */
     persist() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.list))
+      localStorage.setItem('activeWildshape', JSON.stringify(this.wildshape))
+      localStorage.setItem('activePolymorph', JSON.stringify(this.polymorph))
     },
   },
 })
 
-/* ───────── helpers ───────── */
-function loadFromLocal() {
+function loadFromLocal(key) {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY)
-    return raw ? JSON.parse(raw) : []
+    const raw = localStorage.getItem(key)
+    return raw ? JSON.parse(raw) : null
   } catch {
-    return []
+    return null
   }
 }

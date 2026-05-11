@@ -1,21 +1,31 @@
 <script setup>
 /* ---------- data & komponenter ---------- */
 import beastsData from '@/assets/beasts.json'
+import polymorphData from '@/assets/polymorph.json'
+import spellsData from '@/assets/spells.json'
 import BeastCard from '@/components/BeastCard.vue'
-import FilterSidebar from '@/components/FilterSidebar.vue'
+import FilterBar from '@/components/FilterBar.vue'
+import NotesPanel from '@/components/NotesPanel.vue'
+import SpellCard from '@/components/SpellCard.vue'
+import SpellFilterBar from '@/components/SpellFilterBar.vue'
 /* ---------- Pinia ---------- */
 import { useActiveBeasts } from '@/stores/activeBeasts'
+import { useActiveSpells } from '@/stores/useActiveSpells'
 import { useFilters } from '@/stores/useFilters'
+import { useSpellFilters } from '@/stores/useSpellFilters'
 import { computed, ref } from 'vue'
 
 const active = useActiveBeasts()
+const activeSpells = useActiveSpells()
 const filters = useFilters()
+const spellFilters = useSpellFilters()
 
-/* ---------- view options ---------- */
-const sortBy = ref('name') // udvidet med flere muligheder
+/* ---------- fane + view options ---------- */
+const activeTab = ref('wildshape') // 'wildshape' | 'polymorph' | 'spells'
+const sortBy = ref('name')
 const sortDirection = ref('asc') // 'asc' | 'desc'
 const viewMode = ref('grid') // 'grid' | 'compact'
-const showAllExpanded = ref(false) // til expand/collapse all
+const showAllExpanded = ref(false)
 
 /* ---------- helper function til at parse CR til numerisk værdi ---------- */
 const parseCR = (cr) => {
@@ -65,6 +75,8 @@ const sizeOrder = {
 
 /* ---------- filtreret og sorteret liste ---------- */
 const beasts = computed(() => {
+  if (activeTab.value === 'polymorph') return polymorphData
+
   let filtered = beastsData.filter(filters.predicate)
 
   // Sortering
@@ -110,8 +122,26 @@ const beasts = computed(() => {
   return filtered
 })
 
+/* ---------- spells grouped by level ---------- */
+const spellsByLevel = computed(() => {
+  const filtered = spellsData.filter(spellFilters.predicate)
+  const groups = {}
+  for (const spell of filtered) {
+    if (!groups[spell.level]) groups[spell.level] = []
+    groups[spell.level].push(spell)
+  }
+  return Object.entries(groups)
+    .sort(([a], [b]) => Number(a) - Number(b))
+    .map(([level, spells]) => ({
+      level: Number(level),
+      label: Number(level) === 0 ? 'Cantrips' : `Level ${level}`,
+      spells: spells.sort((a, b) => a.name.localeCompare(b.name)),
+    }))
+})
+
 /* ---------- empty state check ---------- */
 const hasFilters = computed(() => {
+  if (activeTab.value !== 'wildshape') return false
   return filters.q || filters.crMax < 6 || filters.moves.length > 0 || filters.senses.length > 0
 })
 
@@ -127,12 +157,13 @@ const toggleSortDirection = () => {
 
 const toggleAllExpanded = () => {
   showAllExpanded.value = !showAllExpanded.value
-  // Dette vil sende et event til alle BeastCard komponenter
-  window.dispatchEvent(
-    new CustomEvent('toggle-all-beasts', {
-      detail: { expanded: showAllExpanded.value },
-    }),
-  )
+  window.dispatchEvent(new CustomEvent('toggle-all-beasts', { detail: { expanded: showAllExpanded.value } }))
+}
+
+const showAllSpellsExpanded = ref(false)
+const toggleAllSpellsExpanded = () => {
+  showAllSpellsExpanded.value = !showAllSpellsExpanded.value
+  window.dispatchEvent(new CustomEvent('toggle-all-spells', { detail: { expanded: showAllSpellsExpanded.value } }))
 }
 
 const toggleViewMode = () => {
@@ -143,33 +174,117 @@ const toggleViewMode = () => {
 <template>
   <!-- ─── LAYOUT WRAPPER ─────────────────────────────── -->
   <div class="page">
-    <!-- ===== SIDEBAR (desktop) / FAB‑knap (mobil) ===== -->
-    <FilterSidebar />
-
-    <main class="content grow">
-      <!-- ░░░ AKTIVE BEASTS (STICKY) ░░░ -->
-      <section v-if="active.list.length" class="active-section">
-        <div class="active-header">
-          <h2 class="active-title">
-            <span class="active-icon">⚔️</span>
-            Active Beasts ({{ active.list.length }}/4)
-          </h2>
+    <main class="content">
+      <!-- ░░░ STICKY TOP: FANER ░░░ -->
+      <div class="sticky-top">
+        <div class="tab-bar">
+          <button
+            class="tab"
+            :class="{ active: activeTab === 'wildshape' }"
+            @click="activeTab = 'wildshape'"
+          >
+            🐺 Wildshape
+          </button>
+          <button
+            class="tab"
+            :class="{ active: activeTab === 'polymorph' }"
+            @click="activeTab = 'polymorph'"
+          >
+            ✨ Polymorph
+          </button>
+          <button
+            class="tab tab-spells"
+            :class="{ active: activeTab === 'spells' }"
+            @click="activeTab = 'spells'"
+          >
+            🔮 Spells
+          </button>
         </div>
-        <div class="active-grid">
-          <BeastCard
-            v-for="b in active.list"
-            :key="'active-' + b.name"
-            :beast="b"
-            lock-expanded
-            class="active-card"
-          />
+      </div>
+
+      <!-- Aktive beasts: wildshape + polymorph (scrollable, skjult på spells-fanen) -->
+      <section v-if="(active.wildshape || active.polymorph) && activeTab !== 'spells'" class="active-section">
+        <div class="active-slots">
+          <!-- Wildshape slot -->
+          <div class="active-slot ws-slot">
+            <div class="slot-label ws-label">⚔️ Wildshape</div>
+            <BeastCard
+              v-if="active.wildshape"
+              :key="active.wildshape.name"
+              :beast="active.wildshape"
+              lock-expanded
+              beast-type="wildshape"
+              class="ws-card"
+            />
+            <div v-else class="slot-empty">Ingen wildshape valgt</div>
+          </div>
+
+          <!-- Polymorph slot -->
+          <div class="active-slot poly-slot">
+            <div class="slot-label poly-label">
+              ✨ Polymorph
+              <span v-if="active.polymorph?.hp" class="slot-hp">{{ active.polymorph.hp.split(' ')[0] }} HP</span>
+            </div>
+            <BeastCard
+              v-if="active.polymorph"
+              :key="active.polymorph.name"
+              :beast="active.polymorph"
+              lock-expanded
+              beast-type="polymorph"
+              show-all-stats
+              class="poly-card"
+            />
+            <div v-else class="slot-empty">Ingen polymorph valgt</div>
+          </div>
         </div>
       </section>
 
-      <!-- ░░░ MAIN CONTENT AREA ░░░ -->
-      <div class="main-content">
-        <!-- ░░░ TOOLBAR ░░░ -->
-        <div class="toolbar">
+      <!-- Filterbar (kun wildshape) -->
+      <FilterBar v-if="activeTab === 'wildshape'" />
+
+      <!-- ░░░ SPELLS FANE ░░░ -->
+      <template v-if="activeTab === 'spells'">
+        <!-- Aktive spells øverst -->
+        <section v-if="activeSpells.pinned.length" class="active-spells-section">
+          <div class="active-spells-label">⭐ Active Spells</div>
+          <div class="active-spells-grid">
+            <SpellCard
+              v-for="s in activeSpells.pinned"
+              :key="s.name"
+              :spell="s"
+              :force-expanded="true"
+            />
+          </div>
+        </section>
+
+        <SpellFilterBar />
+        <div class="main-content">
+          <div class="spells-toolbar">
+            <button class="action-btn" @click="toggleAllSpellsExpanded">
+              {{ showAllSpellsExpanded ? 'Collapse All' : 'Expand All' }}
+            </button>
+          </div>
+          <template v-if="spellsByLevel.length > 0">
+            <div v-for="group in spellsByLevel" :key="group.level" class="spell-level-group">
+              <h3 class="level-heading">{{ group.label }}</h3>
+              <div class="spell-grid">
+                <SpellCard v-for="s in group.spells" :key="s.name" :spell="s" />
+              </div>
+            </div>
+          </template>
+          <div v-else class="empty-state">
+            <div class="empty-icon">🔮</div>
+            <h3>No spells found</h3>
+            <p>Try adjusting your filters</p>
+            <button @click="spellFilters.reset()" class="reset-filters-btn">Clear filters</button>
+          </div>
+        </div>
+      </template>
+
+      <!-- ░░░ MAIN CONTENT AREA (wildshape + polymorph) ░░░ -->
+      <div v-if="activeTab !== 'spells'" class="main-content">
+        <!-- ░░░ TOOLBAR (kun wildshape) ░░░ -->
+        <div v-if="activeTab === 'wildshape'" class="toolbar">
           <div class="results-info">
             <h3 class="results-count">
               {{ beasts.length }} {{ beasts.length === 1 ? 'Beast' : 'Beasts' }}
@@ -305,7 +420,7 @@ const toggleViewMode = () => {
         <transition name="fade" mode="out-in">
           <div
             v-if="beasts.length > 0"
-            :class="viewMode === 'compact' ? 'beast-list' : 'beast-grid'"
+            :class="[viewMode === 'compact' ? 'beast-list' : 'beast-grid', `tab-${activeTab}`]"
           >
             <transition-group name="beast-fade">
               <BeastCard
@@ -314,6 +429,8 @@ const toggleViewMode = () => {
                 :beast="b"
                 :force-expanded="showAllExpanded"
                 :compact-mode="viewMode === 'compact'"
+                :beast-type="activeTab"
+                :show-all-stats="activeTab === 'polymorph'"
               />
             </transition-group>
           </div>
@@ -330,6 +447,9 @@ const toggleViewMode = () => {
         </transition>
       </div>
     </main>
+
+    <!-- ░░░ NOTER-PANEL ░░░ -->
+    <NotesPanel />
   </div>
 </template>
 
@@ -347,43 +467,156 @@ const toggleViewMode = () => {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  min-width: 0;
 }
 
-/*****  ACTIVE BEASTS SECTION  *****/
-.active-section {
-  background: linear-gradient(180deg, #1a0a0a 0%, #0f0505 100%);
-  border-bottom: 1px solid #dc2626;
+/*****  STICKY TOP: AKTIVE BEASTS + FANER  *****/
+.sticky-top {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(10px);
+  background: #0a0a0a;
 }
 
-.active-header {
-  padding: 1.5rem 2rem 1rem;
+.active-section {
+  border-bottom: 1px solid #1a1a1a;
+  background: #0a0a0a;
 }
 
-.active-title {
+.active-slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: stretch;
+}
+
+.active-slot {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.slot-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin: 0;
+  gap: 0.375rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  flex-shrink: 0;
+}
+
+.ws-label {
   color: #dc2626;
-  font-weight: 700;
-  font-size: 1.25rem;
+  background: rgba(220, 38, 38, 0.1);
+  border-left: 3px solid #dc2626;
 }
 
-.active-icon {
-  font-size: 1.5rem;
-  filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.5));
+.poly-label {
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid #8b5cf6;
+  justify-content: space-between;
 }
 
-.active-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1rem;
-  padding: 0 2rem 1.5rem;
+.slot-hp {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  letter-spacing: 0.02em;
 }
+
+.active-slot > .ws-card,
+.active-slot > .poly-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.active-slot > .slot-empty {
+  padding: 0.75rem 1rem;
+}
+
+/* Wildshape ring */
+.ws-card :deep(.beast-card) {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 2px #dc2626, 0 0 24px rgba(220, 38, 38, 0.2);
+  background: linear-gradient(135deg, #1a0a0a 0%, #1a1a1a 100%);
+  height: 100%;
+}
+
+/* Polymorph ring */
+.poly-card :deep(.beast-card) {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px #8b5cf6, 0 0 24px rgba(139, 92, 246, 0.2);
+  background: linear-gradient(135deg, #0d0a1a 0%, #1a1a1a 100%);
+  height: 100%;
+}
+
+/* Disable hover lift on active cards */
+.ws-card :deep(.beast-card:hover) {
+  transform: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 2px #dc2626, 0 0 24px rgba(220, 38, 38, 0.2);
+}
+
+.ws-card :deep(.beast-card:hover::before),
+.poly-card :deep(.beast-card:hover::before) {
+  opacity: 0;
+}
+
+.poly-card :deep(.beast-card:hover) {
+  transform: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px #8b5cf6, 0 0 24px rgba(139, 92, 246, 0.2);
+}
+
+.slot-empty {
+  color: #404040;
+  font-size: 0.8125rem;
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+/*****  FANER  *****/
+.tab-bar {
+  display: flex;
+  border-bottom: 1px solid #262626;
+  background: #0f0f0f;
+}
+
+.tab {
+  padding: 0.875rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #737373;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tab:hover {
+  color: #ffffff;
+}
+
+.tab.active {
+  color: #ffffff;
+  border-bottom-color: #dc2626;
+}
+
 
 /*****  MAIN CONTENT  *****/
 .main-content {
@@ -579,6 +812,17 @@ const toggleViewMode = () => {
   gap: 0.75rem;
 }
 
+/* Tab-specific hover glow */
+.tab-wildshape :deep(.beast-card:hover) {
+  border-color: #dc262666;
+  box-shadow: 0 4px 24px rgba(220, 38, 38, 0.15);
+}
+
+.tab-polymorph :deep(.beast-card:hover) {
+  border-color: #8b5cf666;
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.15);
+}
+
 /* List view modifications */
 .beast-list :deep(.beast-card) {
   max-width: 100%;
@@ -635,6 +879,63 @@ const toggleViewMode = () => {
 .reset-filters-btn:hover {
   background: #dc2626;
   color: #ffffff;
+}
+
+/*****  SPELLS  *****/
+.active-spells-section {
+  padding: 1rem 2rem;
+  background: #0d0d0d;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.active-spells-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #f59e0b33;
+}
+
+.active-spells-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+
+.spells-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+
+.spell-level-group {
+  margin-bottom: 2rem;
+}
+
+.level-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f59e0b33;
+}
+
+.spell-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+
+.tab-spells.active {
+  border-bottom-color: #f59e0b;
+  color: #fde68a;
 }
 
 /*****  ANIMATIONS  *****/
@@ -699,11 +1000,6 @@ const toggleViewMode = () => {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-/* Active cards special styling */
-.active-card :deep(.beast-card) {
-  background: linear-gradient(135deg, #1a1a1a 0%, #261a1a 100%);
-  border-color: #dc262633;
-}
 
 /* Loading skeleton */
 @keyframes shimmer {
